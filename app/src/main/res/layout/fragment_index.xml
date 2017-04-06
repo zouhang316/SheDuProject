@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_gradient_toolbar">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/wihte"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/ic_search" />
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"></com.bigkoo.convenientbanner.ConvenientBanner>
+
+                <RelativeLayout
+                    android:id="@+id/touming"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#FF1D1D1D">
+
+                    <TextView
+                        android:id="@+id/du"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:text="30°"
+                        android:textColor="@color/wihte"
+                        android:textSize="38sp" />
+
+                    <TextView
+                        android:id="@+id/city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_toRightOf="@+id/du"
+                        android:text="湖南长沙"
+                        android:textColor="@color/wihte"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/kongqi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/city"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toRightOf="@+id/du"
+                        android:text="空气优"
+                        android:textColor="@color/wihte"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/qing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/city"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/city"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@mipmap/ic_sun"
+                        android:text="晴"
+                        android:textColor="@color/wihte"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/kongqi"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/city"
+                        android:text="40"
+                        android:textColor="@color/wihte"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="我是承包商"
+                        android:textColor="@color/wihte"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="找活干"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="找班组"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="待工设置"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/wagehosted"
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="工资托管"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="看小说"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="看新闻"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="培训资料"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="68dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableTop="@mipmap/ic_launcher"
+                        android:gravity="center"
+                        android:text="更多"
+                        android:textColor="@color/radiobuttonTextColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="推荐工作"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/ic_right" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+            <com.beenvip.shedu.view.MyListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@color/line"
+                android:dividerHeight="1dp"
+                android:focusable="false" />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_gradient_toolbar">
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="请选择身份"
+                android:textColor="@color/wihte"
+                android:textSize="17sp" />
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <HorizontalScrollView
+        android:layout_below="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/btn_work"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="255dp"
+                    android:layout_height="220dp"
+                    android:layout_margin="15dp"
+                    android:button="@null"
+                    android:background="@drawable/test"
+                    android:drawableTop="@mipmap/worker"
+                    android:text="我是工人"
+                    android:elevation="9dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"/>
+                <RadioButton
+                    android:id="@+id/btn_fabaofang"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="255dp"
+                    android:layout_height="220dp"
+                    android:layout_margin="15dp"
+                    android:button="@null"
+                    android:background="@drawable/test"
+                    android:drawableTop="@mipmap/fabaofang"
+                    android:text="我是发包方"
+                    android:elevation="9dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"/>
+                <RadioButton
+                    android:id="@+id/btn_thirdparty"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="255dp"
+                    android:layout_height="220dp"
+                    android:layout_margin="15dp"
+                    android:button="@null"
+                    android:background="@drawable/test"
+                    android:drawableTop="@mipmap/thirdparty"
+                    android:text="我是第三方"
+                    android:elevation="9dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+    <Button
+        android:id="@+id/comit"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/shape_choice"
+        android:text="确认"
+        android:textColor="@color/wihte"
+        android:textSize="17sp"/>
+
+
+</RelativeLayout>

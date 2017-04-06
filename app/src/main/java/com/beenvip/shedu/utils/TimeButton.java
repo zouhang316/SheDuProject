@@ -1,0 +1,150 @@
+package com.beenvip.shedu.utils;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.Handler;
+import android.util.AttributeSet;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+import com.beenvip.shedu.MyApplication;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class TimeButton extends Button implements OnClickListener {
+    private long lenght = 30 * 1000;
+    private String textafter = "重新获取";
+    private String textbefore = "获取验证码";
+    private final String TIME = "time";
+    private final String CTIME = "ctime";
+    private OnClickListener mOnclickListener;
+    private Timer t;
+    private TimerTask tt;
+    private long time;
+    Map<String, Long> map = new HashMap<String, Long>();
+    private boolean isFinish = true;
+
+    public TimeButton(Context context) {
+        super(context);
+        setOnClickListener(this);
+
+    }
+
+    public TimeButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        setOnClickListener(this);
+    }
+
+    public boolean isFinish() {
+        return isFinish;
+    }
+
+    @SuppressLint("HandlerLeak")
+    Handler han = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+            TimeButton.this.setText(textafter + "(" + time / 1000 + "s)");
+            time -= 1000;
+            if (time < 0) {
+                isFinish = true;
+                TimeButton.this.setEnabled(true);
+                TimeButton.this.setText(textbefore);
+                clearTimer();
+            }
+        }
+
+        ;
+    };
+
+    private void initTimer() {
+        time = lenght;
+        t = new Timer();
+        isFinish = false;
+        tt = new TimerTask() {
+            @Override
+            public void run() {
+                han.sendEmptyMessage(0x01);
+            }
+        };
+    }
+
+    private void clearTimer() {
+        if (tt != null) {
+            tt.cancel();
+            tt = null;
+        }
+        if (t != null)
+            t.cancel();
+        t = null;
+    }
+
+    @Override
+    public void setOnClickListener(OnClickListener l) {
+        if (l instanceof TimeButton) {
+            super.setOnClickListener(l);
+        } else
+            this.mOnclickListener = l;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (mOnclickListener != null)
+            mOnclickListener.onClick(v);
+    }
+
+    public void startTimeCount() {
+        if (isFinish) {
+            initTimer();
+            this.setText(textafter + "(" + time / 1000 + "s)");
+            this.setEnabled(false);
+            t.schedule(tt, 0, 1000);
+        }
+    }
+
+    public void onDestroy() {
+        if (MyApplication.longHashMap == null)
+            MyApplication.longHashMap = new HashMap<String, Long>();
+        MyApplication.longHashMap.put(TIME, time);
+        MyApplication.longHashMap.put(CTIME, System.currentTimeMillis());
+        clearTimer();
+    }
+
+    private void onCreate(Bundle bundle) {
+        if (MyApplication.longHashMap == null)
+            return;
+        if (MyApplication.longHashMap.size() <= 0)
+            return;
+        long time = System.currentTimeMillis() - MyApplication.longHashMap.get(CTIME)
+                - MyApplication.longHashMap.get(TIME);
+        MyApplication.longHashMap.clear();
+        if (time > 0)
+            return;
+        else {
+            initTimer();
+            this.time = Math.abs(time);
+            t.schedule(tt, 0, 1000);
+            this.setText(time + textafter);
+            this.setEnabled(false);
+        }
+    }
+
+    private TimeButton setTextAfter(String text1) {
+        this.textafter = text1;
+        return this;
+    }
+
+    private TimeButton setTextBefore(String text0) {
+        this.textbefore = text0;
+        this.setText(textbefore);
+        return this;
+    }
+
+    private TimeButton setLenght(long lenght) {
+        this.lenght = lenght;
+        return this;
+    }
+}

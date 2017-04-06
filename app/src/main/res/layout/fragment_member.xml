@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#F5F5F5"
+        android:paddingLeft="10dp"
+        android:paddingRight="50dp"
+        android:textSize="15sp"
+        android:hint="请输入姓名或手机号"
+        android:drawableRight="@mipmap/ic_search"/>
+    <ListView
+        android:background="@color/wihte"
+        android:id="@+id/member_lv"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/line"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        >
+    </ListView>
+
+</LinearLayout>
