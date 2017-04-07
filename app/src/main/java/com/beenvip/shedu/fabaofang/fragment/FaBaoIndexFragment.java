@@ -1,28 +1,48 @@
 package com.beenvip.shedu.fabaofang.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
+import com.beenvip.shedu.event.ShowFindBanzu;
+import com.beenvip.shedu.fabaofang.activity.FabaoActivity;
+import com.beenvip.shedu.fabaofang.adapter.GridViewAdapter;
 import com.beenvip.shedu.holder.LocalImageHolderView;
+import com.beenvip.shedu.view.MyGridView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ZH on 2017/3/29.
  * 497239511@qq.com
  */
 
-public class FaBaoIndexFragment extends BaseFragment {
+public class FaBaoIndexFragment extends BaseFragment implements View.OnClickListener {
     private ConvenientBanner banner;
     private ArrayList<Integer> imageList;
     private RelativeLayout layout;
+    private RadioButton fabao;
+    private MyGridView gridView;
+    private GridViewAdapter adapter;
+    private List<String> datas;
     @Override
     public void initData(Bundle savedInstanceState) {
+        datas=new ArrayList<>();
+        for (int i = 0; i < 11; i++) {
+            datas.add("");
+        }
+
+
 
     }
 
@@ -30,8 +50,22 @@ public class FaBaoIndexFragment extends BaseFragment {
     public void initView(View view, Bundle savedInstanceState) {
         banner= (ConvenientBanner) view.findViewById(R.id.banner);
         layout= (RelativeLayout) view.findViewById(R.id.touming);
+        fabao= (RadioButton) view.findViewById(R.id.fabao);
+        gridView= (MyGridView) view.findViewById(R.id.gridview);
         layout.getBackground().setAlpha(100);
+        initListener();
         initBanner();
+        adapter=new GridViewAdapter(getActivity(),datas);
+        gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position==datas.size()){
+                    EventBus.getDefault().post(new ShowFindBanzu());
+                }
+
+            }
+        });
 
     }
 
@@ -51,6 +85,9 @@ public class FaBaoIndexFragment extends BaseFragment {
             }
         },imageList);
     }
+    private void initListener(){
+        fabao.setOnClickListener(this);
+    }
 
     @Override
     public void onResume() {
@@ -62,5 +99,16 @@ public class FaBaoIndexFragment extends BaseFragment {
     public void onPause() {
         super.onPause();
         banner.stopTurning();
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id=v.getId();
+        switch (id){
+            case R.id.fabao:
+                startActivity(new Intent(getActivity(), FabaoActivity.class));
+                break;
+        }
+
     }
 }

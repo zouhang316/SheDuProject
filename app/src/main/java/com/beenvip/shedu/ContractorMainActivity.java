@@ -7,11 +7,18 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import com.beenvip.shedu.contractor.IndexFragment;
+import com.beenvip.shedu.contractor.ContractorIndexFragment;
 import com.beenvip.shedu.contractor.ChanceFragment;
 import com.beenvip.shedu.contractor.MessageFragment;
+import com.beenvip.shedu.contractor.ContractorMineFragment;
 import com.beenvip.shedu.contractor.MyBanzuFragment;
+import com.beenvip.shedu.event.ShowChance;
 import com.beenvip.shedu.utils.ExitAppliation;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -22,10 +29,10 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
     protected final int MINE_FLAG = 0x103;
     protected final int MYBANZU_FLAG=0x104;
 
-    private IndexFragment indexFragment;
+    private ContractorIndexFragment contractorIndexFragment;
     private ChanceFragment chanceFragment;
     private MessageFragment messageFragment;
-    private MineFragment mineFragment;
+    private ContractorMineFragment contractorMineFragment;
     private MyBanzuFragment banzuFragment;
     private FragmentTransaction ft;
 
@@ -41,6 +48,7 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EventBus.getDefault().register(this);
         instance=this;
         rd_index= (RadioButton) findViewById(R.id.rb_index);
         rd_chance= (RadioButton) findViewById(R.id.rb_chance);
@@ -62,12 +70,12 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
         switch (index) {
             case INDEX_FLAG:
                 rd_index.setChecked(true);
-                if (indexFragment == null) {
-                    indexFragment = new IndexFragment();
-                    indexFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, indexFragment);
+                if (contractorIndexFragment == null) {
+                    contractorIndexFragment = new ContractorIndexFragment();
+                    contractorIndexFragment.setArguments(bundle);
+                    ft.add(R.id.fl_content, contractorIndexFragment);
                 } else {
-                    ft.show(indexFragment);
+                    ft.show(contractorIndexFragment);
                 }
                 break;
             case CHANCE_FLAG:
@@ -92,12 +100,12 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
                 break;
             case MINE_FLAG:
                 rd_mine.setChecked(true);
-                if (mineFragment == null) {
-                    mineFragment = new MineFragment();
-                    mineFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, mineFragment);
+                if (contractorMineFragment == null) {
+                    contractorMineFragment = new ContractorMineFragment();
+                    contractorMineFragment.setArguments(bundle);
+                    ft.add(R.id.fl_content, contractorMineFragment);
                 } else {
-                    ft.show(mineFragment);
+                    ft.show(contractorMineFragment);
                 }
                 break;
             case MYBANZU_FLAG:
@@ -117,8 +125,8 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
     }
 
     private void hideFragment(FragmentTransaction ft) {
-        if (indexFragment != null) {
-            ft.hide(indexFragment);
+        if (contractorIndexFragment != null) {
+            ft.hide(contractorIndexFragment);
         }
         if (chanceFragment != null) {
             ft.hide(chanceFragment);
@@ -126,8 +134,8 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
         if (messageFragment != null) {
             ft.hide(messageFragment);
         }
-        if (mineFragment != null) {
-            ft.hide(mineFragment);
+        if (contractorMineFragment != null) {
+            ft.hide(contractorMineFragment);
         }
         if (banzuFragment != null) {
             ft.hide(banzuFragment);
@@ -193,5 +201,15 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
             ExitAppliation.getInstance().exit();
 
         }
+    }
+    @Subscribe (threadMode = ThreadMode.MAIN)
+    public void showChance(ShowChance chance){
+        showContentFragment(CHANCE_FLAG,null);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

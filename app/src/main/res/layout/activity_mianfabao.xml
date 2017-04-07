@@ -9,7 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_weight="1"
@@ -44,22 +47,23 @@
                 android:drawableTop="@drawable/tab_index_btn"
                 android:text="首页" />
 
-            <RadioButton
-                android:id="@+id/rb_message"
-                style="@style/tab_main_btn"
-                android:drawableTop="@drawable/tab_index_btn"
-                android:text="消息" />
+
             <RadioButton
                 android:id="@+id/rb_findcbx"
                 style="@style/tab_main_btn"
                 android:drawableTop="@drawable/tab_index_btn"
-                android:text="找承包商" />
+                android:text="找班组" />
 
             <RadioButton
                 android:id="@+id/rb_findgys"
                 style="@style/tab_main_btn"
                 android:drawableTop="@drawable/tab_index_btn"
                 android:text="找供应商" />
+            <RadioButton
+                android:id="@+id/rb_message"
+                style="@style/tab_main_btn"
+                android:drawableTop="@drawable/tab_index_btn"
+                android:text="消息" />
 
             <RadioButton
                 android:id="@+id/rb_mine"

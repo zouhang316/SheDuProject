@@ -29,7 +29,7 @@ import java.util.List;
  * 497239511@qq.com
  */
 
-public class IndexFragment extends BaseFragment implements View.OnClickListener{
+public class ContractorIndexFragment extends BaseFragment implements View.OnClickListener{
     private ConvenientBanner banner;
     private ArrayList<Integer> imageList;
     private RelativeLayout layout;

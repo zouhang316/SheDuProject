@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.beenvip.shedu.contractor.ChanceFragment;
 import com.beenvip.shedu.contractor.MessageFragment;
+import com.beenvip.shedu.supplier.SupplierMineFragment;
 import com.beenvip.shedu.supplier.index.SupplierIndexFragment;
 import com.beenvip.shedu.utils.ExitAppliation;
 
@@ -31,7 +32,7 @@ public class SupplierMainActivity extends AppCompatActivity implements View.OnCl
     private SupplierIndexFragment indexFragment;
     private ChanceFragment chanceFragment;
     private MessageFragment messageFragment;
-    private MineFragment mineFragment;
+    private SupplierMineFragment supplierMineFragment;
 
     private RadioButton rd_index;
     private RadioButton rd_chance;
@@ -92,12 +93,12 @@ public class SupplierMainActivity extends AppCompatActivity implements View.OnCl
                 break;
             case MINE_FLAG:
                 rd_mine.setChecked(true);
-                if (mineFragment == null) {
-                    mineFragment = new MineFragment();
-                    mineFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, mineFragment);
+                if (supplierMineFragment == null) {
+                    supplierMineFragment = new SupplierMineFragment();
+                    supplierMineFragment.setArguments(bundle);
+                    ft.add(R.id.fl_content, supplierMineFragment);
                 } else {
-                    ft.show(mineFragment);
+                    ft.show(supplierMineFragment);
                 }
                 break;
             default:
@@ -116,8 +117,8 @@ public class SupplierMainActivity extends AppCompatActivity implements View.OnCl
         if (messageFragment != null) {
             ft.hide(messageFragment);
         }
-        if (mineFragment != null) {
-            ft.hide(mineFragment);
+        if (supplierMineFragment != null) {
+            ft.hide(supplierMineFragment);
         }
     }
 

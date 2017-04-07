@@ -25,11 +25,13 @@
 
 
     <HorizontalScrollView
-        android:layout_below="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scrollbars="none"
-        android:overScrollMode="never">
+        android:overScrollMode="never"
+        android:layout_below="@+id/appbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,21 +42,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+
                 <RadioButton
                     android:id="@+id/btn_work"
-                    android:gravity="center"
-                    android:padding="10dp"
                     android:layout_width="255dp"
                     android:layout_height="220dp"
                     android:layout_margin="15dp"
-                    android:button="@null"
                     android:background="@drawable/test"
+                    android:button="@null"
                     android:drawableTop="@mipmap/worker"
-                    android:text="我是工人"
                     android:elevation="9dp"
-                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="我是工人"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
                 <RadioButton
                     android:id="@+id/btn_fabaofang"
                     android:gravity="center"

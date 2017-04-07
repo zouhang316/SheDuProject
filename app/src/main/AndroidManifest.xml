@@ -31,6 +31,18 @@
         <activity android:name=".home.SearchaActivity"/>
         <activity android:name=".contractor.activity.WageHostedActivity"/>
         <activity android:name=".contractor.activity.ProjectDetailsActivity"/>
+        <activity android:name=".contractor.activity.AddressSwicthActivity">
+
+        </activity>
+        <activity android:name=".contractor.activity.SMActivity">
+
+        </activity>
+        <activity android:name=".contractor.activity.DateActivity">
+
+            </activity>
+        <activity android:name=".contractor.activity.PersonInforActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".fabaofang.activity.FabaoActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".fabaofang.activity.RecruitmentActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
 
 </manifest>

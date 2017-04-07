@@ -10,9 +10,15 @@ import android.widget.Toast;
 
 import com.beenvip.shedu.contractor.ChanceFragment;
 import com.beenvip.shedu.contractor.MessageFragment;
-import com.beenvip.shedu.fabaofang.fragment.FindgysFragment;
+import com.beenvip.shedu.event.ShowFindBanzu;
 import com.beenvip.shedu.fabaofang.fragment.FaBaoIndexFragment;
+import com.beenvip.shedu.fabaofang.fragment.FabaoMineFragment;
+import com.beenvip.shedu.fabaofang.fragment.FindgysFragment;
 import com.beenvip.shedu.utils.ExitAppliation;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -34,7 +40,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
     private MessageFragment messageFragment;
     private ChanceFragment findcbfFragment;
     private FindgysFragment findgysFragment;
-    private MineFragment mineFragment;
+    private FabaoMineFragment fabaoMineFragment;
 
     private RadioButton rd_index;
     private RadioButton rd_message;
@@ -48,6 +54,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         instance=this;
         setContentView(R.layout.activity_mianfabao);
+        EventBus.getDefault().register(this);
         rd_index= (RadioButton) findViewById(R.id.rb_index);
         rd_findcbf= (RadioButton) findViewById(R.id.rb_findcbx);
         rd_findgys= (RadioButton) findViewById(R.id.rb_findgys);
@@ -107,12 +114,12 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
                 break;
             case MINE_FLAG:
                 rd_mine.setChecked(true);
-                if (mineFragment == null) {
-                    mineFragment = new MineFragment();
-                    mineFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, mineFragment);
+                if (fabaoMineFragment == null) {
+                    fabaoMineFragment = new FabaoMineFragment();
+                    fabaoMineFragment.setArguments(bundle);
+                    ft.add(R.id.fl_content, fabaoMineFragment);
                 } else {
-                    ft.show(mineFragment);
+                    ft.show(fabaoMineFragment);
                 }
                 break;
             default:
@@ -134,8 +141,8 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         if (messageFragment != null) {
             ft.hide(messageFragment);
         }
-        if (mineFragment != null) {
-            ft.hide(mineFragment);
+        if (fabaoMineFragment != null) {
+            ft.hide(fabaoMineFragment);
         }
     }
 
@@ -198,5 +205,15 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
             ExitAppliation.getInstance().exit();
 
         }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void showFindBanzu(ShowFindBanzu banzu){
+        showContentFragment(FINDCBS_FLAG,null);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

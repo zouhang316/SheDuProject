@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="姓名" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入您的姓名"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="年龄" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入您的年龄"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="性别" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="男"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="工作年限" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="3年"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="工作资历" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="工作资历"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="联系电话" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="13888888888"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="籍贯" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="选择省 市"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="工种" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="选择工种"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="期望薪资" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="面议"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="期望工作地点" />
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="选择省 市"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/line"/>
+        <Button
+            android:id="@+id/save"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_loginbutton"
+            android:text="保存"
+            android:textColor="@color/wihte"
+            android:textSize="17sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:gravity="center"
-        android:background="@drawable/shape_hotjob_bg"
-        android:text="木工"/>
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/shape_hotjoblast_bg"
+        android:text="更多"/>
 
 </LinearLayout>

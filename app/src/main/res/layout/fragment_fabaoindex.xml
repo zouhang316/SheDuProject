@@ -137,13 +137,14 @@
                     android:layout_weight="1">
 
                     <RadioButton
+                        android:id="@+id/fabao"
                         android:layout_width="0dp"
                         android:layout_height="68dp"
                         android:layout_weight="1"
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="找供应商"
+                        android:text="发包"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
 
@@ -154,7 +155,7 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="找施工队"
+                        android:text="找班组"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
 
@@ -165,7 +166,7 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="我的项目"
+                        android:text="工人管理"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
 
@@ -176,7 +177,7 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="发布系统"
+                        android:text="工资托管"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -193,7 +194,7 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="行业资讯"
+                        android:text="招募工人"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
 
@@ -204,7 +205,7 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="看新闻"
+                        android:text="找工人"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
 
@@ -215,7 +216,7 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="培训资料"
+                        android:text="发布需求"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
 
@@ -226,11 +227,53 @@
                         android:button="@null"
                         android:drawableTop="@mipmap/ic_launcher"
                         android:gravity="center"
-                        android:text="更多应用"
+                        android:text="更多"
                         android:textColor="@color/radiobuttonTextColor"
                         android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="班组分类"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@mipmap/ic_right" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+            <com.beenvip.shedu.view.MyGridView
+                android:id="@+id/gridview"
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="4"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:focusable="false" />
 
             <TextView
                 android:layout_width="match_parent"
