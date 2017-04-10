@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
-
 import com.beenvip.shedu.CityBean;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
@@ -14,7 +13,7 @@ import com.beenvip.shedu.contractor.activity.WageHostedActivity;
 import com.beenvip.shedu.contractor.adapter.ListViewAdapter;
 import com.beenvip.shedu.fastjson.FastJsonHelper;
 import com.beenvip.shedu.holder.LocalImageHolderView;
-import com.beenvip.shedu.home.SearchaActivity;
+import com.beenvip.shedu.publics.SearchaActivity;
 import com.beenvip.shedu.httputils.IJSONCallback;
 import com.beenvip.shedu.utils.LalaLog;
 import com.beenvip.shedu.view.MyListView;

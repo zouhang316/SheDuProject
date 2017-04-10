@@ -138,49 +138,25 @@
                     android:layout_weight="1">
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="找活干"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="找活干" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="找班组"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="找班组" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="待工设置"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="待工设置" />
 
                     <RadioButton
                         android:id="@+id/wagehosted"
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="工资托管"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="工资托管" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -189,48 +165,24 @@
                     android:layout_weight="1">
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="看小说"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="看小说" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="看新闻"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="看新闻" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="培训资料"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="培训资料" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="更多"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="更多" />
                 </LinearLayout>
             </LinearLayout>
 

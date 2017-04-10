@@ -36,24 +36,10 @@
                 style="@style/ProjectDetailsTextFont"
                 android:drawablePadding="5dp"
                 android:drawableRight="@mipmap/ic_right2"
-                android:text="选择类别"
+                android:text="选择工程类别"
                 android:layout_alignTop="@+id/textView4"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
-        <RelativeLayout
-            style="@style/WageRelativeLayoutStyle">
-            <TextView
-                style="@style/WageFontStyle"
-                android:text="发包估价"/>
-            <TextView
-                android:layout_alignParentRight="true"
-                style="@style/ProjectDetailsTextFont"
-                android:text="估价(万)，可选 万"/>
         </RelativeLayout>
         <TextView
             android:layout_width="match_parent"
@@ -66,12 +52,13 @@
                 style="@style/WageFontStyle"
                 android:text="施工地点" />
 
-            <TextView
+            <EditText
                 style="@style/ProjectDetailsTextFont"
                 android:layout_alignParentRight="true"
-                android:drawableRight="@mipmap/ic_right2"
-                android:drawablePadding="5dp"
-                android:text="请选择省 市 区" />
+                android:background="@null"
+                android:gravity="right"
+                android:hint="填写施工地点"
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <TextView
@@ -82,11 +69,11 @@
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
-                android:text="发包方式"
+                android:text="结算方式"
                 android:id="@+id/textView5" />
             <TextView
                 style="@style/ProjectDetailsTextFont"
-                android:text="承包方式  支付方式  结算方式"
+                android:text="选择结算方式"
                 android:drawableRight="@mipmap/ic_right2"
                 android:drawablePadding="5dp"
                 android:layout_alignParentRight="true" />
@@ -103,8 +90,43 @@
             <TextView
                 android:layout_alignParentRight="true"
                 style="@style/ProjectDetailsTextFont"
-                android:text="例如： 工程量10000平米"/>
+                android:text="填写补充内容"/>
         </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line"/>
+
+        <RelativeLayout style="@style/WageRelativeLayoutStyle"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="材料需求" />
+            <LinearLayout
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right">
+
+                <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="材料需求材料需求材料需求材料需求材料需求材料需求材料需求"
+                android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line"/>
         <RelativeLayout
             android:layout_marginTop="20dp"
             style="@style/WageRelativeLayoutStyle">
@@ -116,7 +138,7 @@
                 android:layout_alignParentRight="true"
                 android:background="@null"
                 android:gravity="right"
-                android:hint="招标对接人姓名"
+                android:hint="发布人姓名"
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
@@ -140,29 +162,16 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/line"/>
-        <RelativeLayout
-            style="@style/WageRelativeLayoutStyle">
-            <TextView
-                style="@style/WageFontStyle"
-                android:text="允许班组电话联系"/>
-        </RelativeLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="13sp"
-            android:text="手机号码全程保密，后期可随时修改此项，停止对方与您电话联系"/>
-
         <Button
             android:id="@+id/comit"
             android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/shape_loginbutton"
-            android:text="确认发包"
+            android:text="发布需求"
             android:textColor="@color/wihte"
             android:textSize="17sp" />
 

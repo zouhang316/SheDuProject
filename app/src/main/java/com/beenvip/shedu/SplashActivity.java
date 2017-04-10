@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.beenvip.shedu.base.BaseActivity;
+import com.beenvip.shedu.utils.CommUtils;
 
 /**
  * Created by ZH on 2017/3/24.
@@ -14,7 +15,12 @@ import com.beenvip.shedu.base.BaseActivity;
 public class SplashActivity extends BaseActivity {
     @Override
     protected void initData() {
-
+        //检查网络
+        if (CommUtils.isNetworkConnected(this)){
+            showToastMsg("OK");
+        }else {
+            showToastMsg("NO");
+        }
 
     }
 

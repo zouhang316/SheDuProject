@@ -1,4 +1,4 @@
-package com.beenvip.shedu.home;
+package com.beenvip.shedu.publics;
 
 import android.content.Intent;
 import android.os.Bundle;

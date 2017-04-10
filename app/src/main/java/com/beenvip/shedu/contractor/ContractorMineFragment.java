@@ -12,7 +12,8 @@ import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.activity.PersonInforActivity;
 import com.beenvip.shedu.contractor.activity.SMActivity;
 import com.beenvip.shedu.event.ShowChance;
-import com.beenvip.shedu.home.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.KefuActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -25,6 +26,7 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
     private RelativeLayout switchidentity;
     private RelativeLayout userInfo;
     private RelativeLayout smyz;
+    private RelativeLayout kefu;
     private ScrollView scrollView;
     private Button findJob;
     @Override
@@ -36,6 +38,7 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
         switchidentity= (RelativeLayout) view.findViewById(R.id.switchidentity);
         scrollView= (ScrollView) view.findViewById(R.id.myscrollview);
         userInfo= (RelativeLayout) view.findViewById(R.id.contractor_userinfo);
+        kefu= (RelativeLayout) view.findViewById(R.id.kefu);
         smyz= (RelativeLayout) view.findViewById(R.id.smyz);
         findJob= (Button) view.findViewById(R.id.mine_findjob);
         initListener();
@@ -64,6 +67,9 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
             case R.id.mine_findjob:
                 EventBus.getDefault().post(new ShowChance());
                 break;
+            case R.id.kefu:
+                startActivity(new Intent(getActivity(), KefuActivity.class));
+                break;
         }
     }
     private void initListener(){
@@ -71,6 +77,7 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
         userInfo.setOnClickListener(this);
         smyz.setOnClickListener(this);
         findJob.setOnClickListener(this);
+        kefu.setOnClickListener(this);
     }
 
 

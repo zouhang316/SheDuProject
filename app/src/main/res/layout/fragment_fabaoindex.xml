@@ -138,48 +138,25 @@
 
                     <RadioButton
                         android:id="@+id/fabao"
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="发包"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="发包" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        android:id="@+id/findbanzu"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="找班组"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="找班组" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="工人管理"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="工人管理" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="工资托管"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="工资托管" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -188,48 +165,26 @@
                     android:layout_weight="1">
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        android:id="@+id/zhaogong"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="招募工人"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="招募工人" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="找工人"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="找工人" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        android:id="@+id/releasedemand"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="发布需求"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="发布需求" />
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_height="68dp"
-                        android:layout_weight="1"
-                        android:button="@null"
+                        style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:gravity="center"
-                        android:text="更多"
-                        android:textColor="@color/radiobuttonTextColor"
-                        android:textSize="14sp" />
+                        android:text="更多" />
                 </LinearLayout>
             </LinearLayout>
             <TextView
@@ -290,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:text="推荐工作"
+                    android:text="推荐班组"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -300,7 +255,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="15dp"
-                    android:background="@mipmap/ic_right" />
+                    android:src="@mipmap/ic_right" />
             </RelativeLayout>
 
             <TextView

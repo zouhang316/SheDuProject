@@ -1,4 +1,4 @@
-package com.beenvip.shedu.contractor.activity;
+package com.beenvip.shedu.publics;
 
 import android.os.Bundle;
 import android.view.View;

@@ -245,25 +245,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/line"/>
+
             <RelativeLayout
-                android:layout_weight="1"
+                android:id="@+id/kefu"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center">>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:text="联系客服"
                     android:textColor="@color/minefontcolor"
-                    android:text="联系客服"/>
+                    android:textSize="14sp" />
+
                 <TextView
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
+                    android:layout_alignParentRight="true"
+                    android:drawablePadding="5dp"
                     android:drawableRight="@mipmap/ic_right2"
-                    android:drawablePadding="5dp" />
+                    android:textSize="12sp" />
             </RelativeLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

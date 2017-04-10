@@ -13,7 +13,8 @@ import com.beenvip.shedu.contractor.activity.PersonInforActivity;
 import com.beenvip.shedu.contractor.activity.SMActivity;
 import com.beenvip.shedu.fabaofang.activity.FabaoActivity;
 import com.beenvip.shedu.fabaofang.activity.RecruitmentActivity;
-import com.beenvip.shedu.home.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.KefuActivity;
 
 /**
  * Created by ZH on 2017/3/21.
@@ -24,6 +25,7 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
     private RelativeLayout switchidentity;
     private RelativeLayout userInfo;
     private RelativeLayout smyz;
+    private RelativeLayout kefu;
     private ScrollView scrollView;
     private Button fabao;
     private Button zhaogong;
@@ -39,6 +41,7 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
         smyz= (RelativeLayout) view.findViewById(R.id.smyz);
         fabao= (Button) view.findViewById(R.id.fabao);
         zhaogong= (Button) view.findViewById(R.id.zhaogong);
+        kefu= (RelativeLayout) view.findViewById(R.id.kefu);
         initListener();
 
 
@@ -68,6 +71,9 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
             case R.id.zhaogong:
                 startActivity(new Intent(getActivity(), RecruitmentActivity.class));
                 break;
+            case R.id.kefu:
+                startActivity(new Intent(getActivity(), KefuActivity.class));
+                break;
         }
     }
     private void initListener(){
@@ -76,6 +82,7 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
         smyz.setOnClickListener(this);
         fabao.setOnClickListener(this);
         zhaogong.setOnClickListener(this);
+        kefu.setOnClickListener(this);
     }
 
 
