@@ -79,8 +79,20 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/radiobuttonTextColor</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:background">@color/wihte</item>
+        <item name="android:background">@drawable/shape_rbt_presed_color</item>
         <item name="android:layout_weight">1</item>
+    </style>
+    <style name="MarginLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:background">@color/line</item>
+    </style>
+    <style name="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/line</item>
     </style>
 
 

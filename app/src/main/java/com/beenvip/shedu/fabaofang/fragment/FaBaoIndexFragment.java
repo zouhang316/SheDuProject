@@ -74,7 +74,7 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position==datas.size()){
-                    //更多
+                    EventBus.getDefault().post(new ShowFindBanzu());
                 }
 
             }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout style="@style/WageRelativeLayoutStyle">
@@ -18,11 +19,7 @@
     </RelativeLayout>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/line"/>
+        style="@style/MarginLine"/>
     <RelativeLayout
         style="@style/WageRelativeLayoutStyle">
         <TextView
@@ -47,11 +44,7 @@
             android:text="上传身份证清晰照片"/>
     </RelativeLayout>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/line"/>
+        style="@style/MarginLine"/>
     <LinearLayout
         android:background="@color/wihte"
         android:layout_width="match_parent"

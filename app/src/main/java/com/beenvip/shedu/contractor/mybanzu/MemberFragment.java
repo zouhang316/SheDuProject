@@ -2,6 +2,7 @@ package com.beenvip.shedu.contractor.mybanzu;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.beenvip.shedu.R;
@@ -25,13 +26,22 @@ public class MemberFragment extends BaseFragment {
 
     @Override
     public void initView(View view, Bundle savedInstanceState) {
-        List<String> strings=new ArrayList<>();
+        final List<String> strings=new ArrayList<>();
         for (int i = 0; i <4 ; i++) {
             strings.add("");
         }
         listView= (ListView) view.findViewById(R.id.member_lv);
         MemberListAdapter adapter=new MemberListAdapter(getContext(),strings);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                for (int i = 0; i < strings.size(); i++) {
+                    listView.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.wihte));
+                }
+                listView.getChildAt(position).setBackgroundColor(getResources().getColor(R.color.black));
+            }
+        });
 
     }
 

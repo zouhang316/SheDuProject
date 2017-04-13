@@ -21,9 +21,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -35,9 +33,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -49,9 +45,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -63,9 +57,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -79,9 +71,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -95,9 +85,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -123,9 +111,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -140,9 +126,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -157,9 +141,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <Button
             android:id="@+id/comit"
             android:layout_width="match_parent"

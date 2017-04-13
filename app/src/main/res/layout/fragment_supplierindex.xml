@@ -35,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
+        android:background="@color/backgroundColor"
         android:scrollbars="none">
 
         <LinearLayout
@@ -128,7 +129,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -185,15 +185,11 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/line" />
-
             <RelativeLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                android:background="@color/wihte">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -220,6 +216,7 @@
 
             <com.beenvip.shedu.view.MyListView
                 android:id="@+id/listview"
+                android:background="@color/wihte"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:divider="@color/line"

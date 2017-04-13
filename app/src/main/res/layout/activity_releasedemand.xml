@@ -23,9 +23,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -42,9 +40,7 @@
                 android:layout_alignParentEnd="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
 
         <RelativeLayout style="@style/WageRelativeLayoutStyle">
 
@@ -62,9 +58,7 @@
         </RelativeLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -79,9 +73,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -93,9 +85,7 @@
                 android:text="填写补充内容"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
 
         <RelativeLayout style="@style/WageRelativeLayoutStyle"
             android:paddingTop="15dp"
@@ -124,9 +114,7 @@
         </RelativeLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             android:layout_marginTop="20dp"
             style="@style/WageRelativeLayoutStyle">
@@ -142,9 +130,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -159,9 +145,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <Button
             android:id="@+id/comit"
             android:layout_width="match_parent"

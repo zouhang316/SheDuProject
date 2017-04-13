@@ -3,14 +3,21 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <com.beenvip.shedu.view.LoadMoreListView
-        android:id="@+id/baselistview"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@color/line"
-        android:dividerHeight="1dp">
+        android:layout_height="match_parent">
+        <com.beenvip.shedu.view.LoadMoreListView
+            android:id="@+id/baselistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/line"
+            android:dividerHeight="1dp">
 
-    </com.beenvip.shedu.view.LoadMoreListView>
+        </com.beenvip.shedu.view.LoadMoreListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
 
 </LinearLayout>

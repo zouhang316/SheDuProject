@@ -23,9 +23,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -42,9 +40,7 @@
                 android:layout_alignParentEnd="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -56,9 +52,7 @@
                 android:text="估价(万)，可选 万"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
 
         <RelativeLayout style="@style/WageRelativeLayoutStyle">
 
@@ -75,9 +69,7 @@
         </RelativeLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -92,9 +84,7 @@
                 android:layout_alignParentRight="true" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -120,9 +110,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -137,9 +125,7 @@
                 android:textSize="14sp" />
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView

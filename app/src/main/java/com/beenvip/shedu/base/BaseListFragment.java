@@ -3,6 +3,8 @@ package com.beenvip.shedu.base;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -23,7 +25,7 @@ import java.util.List;
  * 497239511@qq.com
  */
 
-public class BaseListFragment extends BaseFragment implements LoadMoreListView.MyLoadingListener{
+public class BaseListFragment extends BaseFragment implements LoadMoreListView.MyLoadingListener , SwipeRefreshLayout.OnRefreshListener{
     private String tag;
     private LoadMoreListView listView;
     private int type;
@@ -31,6 +33,23 @@ public class BaseListFragment extends BaseFragment implements LoadMoreListView.M
     private ListViewAdapter adapter;
     private FindCbsAdapter cbsAdapter;
     private DemandAdapter adapter1;
+    private SwipeRefreshLayout refreshLayout;
+    private static final int REFRESH=0x100;
+    private static final int LOADMORE=0x101;
+    private Handler mHandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case REFRESH:
+                    refreshLayout.setRefreshing(false);
+                    break;
+                case LOADMORE:
+                    loadMore();
+                    break;
+            }
+        }
+    };
 
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -41,6 +60,9 @@ public class BaseListFragment extends BaseFragment implements LoadMoreListView.M
     public void initView(View view, Bundle savedInstanceState) {
         listView=new LoadMoreListView(getContext());
         listView= (LoadMoreListView) view.findViewById(R.id.baselistview);
+        refreshLayout= (SwipeRefreshLayout) view.findViewById(R.id.swiperefresh);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setColorSchemeResources(R.color.colorPrimaryDark,R.color.radiogroupTextColor,R.color.grenn,R.color.black);
         listView.setInterface(this);
         initData();
     }
@@ -92,35 +114,7 @@ public class BaseListFragment extends BaseFragment implements LoadMoreListView.M
     @Override
     public void onLoad() {
         LalaLog.i("load","loading");
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                if (beanList.size()>30){
-                    showToast("没有更多数据了");
-                    listView.noMore();
-                    return;
-                }
-                getMore();
-                listView.loadComplate();
-
-                switch (type){
-                    case 0:
-                        adapter.notifyDataSetChanged();
-                        break;
-                    case 1:
-                        cbsAdapter.notifyDataSetChanged();
-                        break;
-                    case 2:
-                        adapter1.notifyDataSetChanged();
-                        break;
-                    case 3:
-                        cbsAdapter.notifyDataSetChanged();
-                        break;
-                }
-            }
-        }, 2000);
+        mHandler.sendEmptyMessageDelayed(LOADMORE,2000);
     }
 
     private void getMore(){
@@ -128,5 +122,33 @@ public class BaseListFragment extends BaseFragment implements LoadMoreListView.M
             CityBean bean=new CityBean();
             beanList.add(bean);
         }
+    }
+    private void loadMore(){
+        if (beanList.size()>30){
+            showToast("没有更多数据了");
+            listView.noMore();
+            return;
+        }
+        getMore();
+        listView.loadComplate();
+        switch (type){
+            case 0:
+                adapter.notifyDataSetChanged();
+                break;
+            case 1:
+                cbsAdapter.notifyDataSetChanged();
+                break;
+            case 2:
+                adapter1.notifyDataSetChanged();
+                break;
+            case 3:
+                cbsAdapter.notifyDataSetChanged();
+                break;
+        }
+    }
+
+    @Override
+    public void onRefresh() {
+        mHandler.sendEmptyMessageDelayed(REFRESH,4000);
     }
 }

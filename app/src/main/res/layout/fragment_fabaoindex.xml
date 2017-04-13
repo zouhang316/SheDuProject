@@ -35,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
+        android:background="@color/backgroundColor"
         android:scrollbars="none">
 
         <LinearLayout
@@ -49,8 +50,9 @@
                 <com.bigkoo.convenientbanner.ConvenientBanner
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
-                    android:layout_height="135dp"></com.bigkoo.convenientbanner.ConvenientBanner>
+                    android:layout_height="135dp">
 
+                </com.bigkoo.convenientbanner.ConvenientBanner>
                 <RelativeLayout
                     android:id="@+id/touming"
                     android:layout_width="match_parent"
@@ -128,7 +130,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -187,13 +188,10 @@
                         android:text="更多" />
                 </LinearLayout>
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/line" />
 
             <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:background="@color/wihte"
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
 
@@ -216,13 +214,12 @@
             </RelativeLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line" />
+                style="@style/Line"/>
 
             <com.beenvip.shedu.view.MyGridView
                 android:id="@+id/gridview"
-                android:layout_margin="15dp"
+                android:background="@color/wihte"
+                android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:numColumns="4"
@@ -230,13 +227,9 @@
                 android:verticalSpacing="10dp"
                 android:focusable="false" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="15dp"
-                android:layout_marginTop="15dp"
-                android:background="@color/line" />
-
             <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:background="@color/wihte"
                 android:layout_width="match_parent"
                 android:layout_height="40dp">
 
@@ -259,12 +252,11 @@
             </RelativeLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line" />
+                style="@style/Line"/>
 
             <com.beenvip.shedu.view.MyListView
                 android:id="@+id/listview"
+                android:background="@color/wihte"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:divider="@color/line"

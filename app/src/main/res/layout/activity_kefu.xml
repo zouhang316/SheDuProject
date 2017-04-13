@@ -17,11 +17,7 @@
             />
     </RelativeLayout>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/line"/>
+        style="@style/MarginLine"/>
     <RelativeLayout
         style="@style/WageRelativeLayoutStyle">
         <TextView
@@ -36,11 +32,7 @@
             />
     </RelativeLayout>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/line"/>
+        style="@style/MarginLine"/>
     <RelativeLayout
         style="@style/WageRelativeLayoutStyle">
         <TextView
@@ -55,11 +47,6 @@
             />
     </RelativeLayout>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/line"/>
-
+        style="@style/MarginLine"/>
 
 </LinearLayout>

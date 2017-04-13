@@ -40,12 +40,8 @@
                 android:textSize="18sp" />
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-
         <RelativeLayout
+            android:layout_marginTop="20dp"
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
@@ -56,9 +52,7 @@
                 android:text="湖南省 长沙市 岳麓区"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -70,9 +64,7 @@
                 android:text="2017-3-21"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -84,9 +76,7 @@
                 android:text="面议 月进度结"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -98,9 +88,7 @@
                 android:text="张先生"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle"
             android:layout_height="wrap_content"
@@ -123,9 +111,7 @@
             </LinearLayout>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -137,13 +123,9 @@
                 android:text="湖南省 长沙市 岳麓区"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            style="@style/Line"/>
         <RelativeLayout
+            android:layout_marginTop="20dp"
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
@@ -154,9 +136,7 @@
                 android:text="已有两家班组报名"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -169,8 +149,6 @@
                 android:text="未报名"/>
         </RelativeLayout>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/line"/>
+            style="@style/Line"/>
     </LinearLayout>
 </ScrollView>

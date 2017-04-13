@@ -10,6 +10,19 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        tasks.whenTaskAdded { task ->
+            if (task.name.contains("lint")
+                ||task.name.equals("clean")
+                ||task.name.contains("Aidl")
+                ||task.name.contains("mockableAndroidjar")
+                ||task.name.contains("UnitTest")
+                ||task.name.contains("AndroidTest")
+                ||task.name.contains("Ndk")
+                ||task.name.contains("Jni")
+            ) {
+                task.enabled=false
+            }
+        }
     }
     buildTypes {
         release {

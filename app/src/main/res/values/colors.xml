@@ -13,5 +13,7 @@
     <color name="black">#000000</color>
     <color name="minefontcolor">#030303</color>
     <color name="gray">#CCCCCC</color>
+    <color name="grenn">#00CD00</color>
     <color name="backgroundColor">#F5F5F5</color>
+    <color name="red">#ffff4444</color>
 </resources>

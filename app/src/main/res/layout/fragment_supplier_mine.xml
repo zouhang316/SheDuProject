@@ -162,9 +162,7 @@
                     android:text="完善资料有助于找到工作"/>
             </RelativeLayout>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line"/>
+                style="@style/Line"/>
             <RelativeLayout
                 android:id="@+id/smyz"
                 android:layout_weight="1"
@@ -187,9 +185,7 @@
                     android:text="认证有助于找到工作"/>
             </RelativeLayout>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line"/>
+                style="@style/Line"/>
             <RelativeLayout
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -242,9 +238,7 @@
                     android:drawablePadding="5dp" />
             </RelativeLayout>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line"/>
+                style="@style/Line"/>
 
             <RelativeLayout
                 android:id="@+id/kefu"
@@ -270,9 +264,7 @@
             </RelativeLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/line"/>
+                style="@style/Line"/>
             <RelativeLayout
                 android:id="@+id/switchidentity"
                 android:layout_weight="1"
