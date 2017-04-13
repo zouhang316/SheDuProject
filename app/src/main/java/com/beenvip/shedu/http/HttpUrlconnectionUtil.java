@@ -47,13 +47,13 @@ public class HttpUrlconnectionUtil {
      * @param timeout 超时时间
      * @return 返回请求服务器后的数据 数据格式JSON
      */
-    public static String postJson(Context context, String host, HashMap<String, String> headers, HashMap<String, String> params, int timeout) {
+    public static String postJson(Context context, int method, String host, HashMap<String, String> headers, HashMap<String, String> params, int timeout) {
         HashMap<String, Object> errMsgMap = new HashMap<>();
         HttpURLConnection httpsURLConnection = null;
         int responseCode = -1;
         String response = null;
         try {
-            httpsURLConnection = getHttpsURLConnection(context, timeout, host);
+            httpsURLConnection = getHttpsURLConnection(context, timeout, host, method);
             if (headers != null && !headers.isEmpty()) {
                 for (Map.Entry<String, String> entry : headers.entrySet()) {
                     String name = entry.getKey();
@@ -104,7 +104,7 @@ public class HttpUrlconnectionUtil {
                 errMsgMap.put("ErrorInfo", "unknown exception");
                 response = JSON.toJSONString(errMsgMap);
             }
-            LalaLog.d(LalaLog.SSX_TAG, "content:" + httpsURLConnection.getContentLength());
+//            LalaLog.d(LalaLog.SSX_TAG, "content:" + httpsURLConnection.getContentLength());
             request.flush();
             request.close();
         } catch (SocketTimeoutException e) {
@@ -134,7 +134,7 @@ public class HttpUrlconnectionUtil {
      * @param bytes   上传的额图片字节数组
      * @return 上传图片返回数据集合 数据格式json
      */
-    public static String uploadByteJson(Context context, String host, Hashtable<String, String> headers, Hashtable<String, String> params, int timeout, byte[] bytes) {
+    public static String uploadByteJson(Context context, int method, String host, Hashtable<String, String> headers, Hashtable<String, String> params, int timeout, byte[] bytes) {
         LalaLog.d(LalaLog.SSX_TAG, "url:" + host);
         LalaLog.d(LalaLog.SSX_TAG, "requestHeaders:" + headers.toString());
         LalaLog.d(LalaLog.SSX_TAG, "paramers:" + params.toString());
@@ -144,7 +144,7 @@ public class HttpUrlconnectionUtil {
         HashMap<String, Object> errMsgMap = new HashMap<>();
         HttpURLConnection httpsURLConnection = null;
         try {
-            httpsURLConnection = getHttpsURLConnection(context, timeout, host);
+            httpsURLConnection = getHttpsURLConnection(context, timeout, host, method);
             String uuid = UUID.randomUUID().toString();
             //添加请求头信息
             if (!headers.isEmpty()) {
@@ -200,7 +200,7 @@ public class HttpUrlconnectionUtil {
                 errMsgMap.put("ErrorInfo", "unknown exception");
                 response = JSON.toJSONString(errMsgMap);
             }
-            LalaLog.d(LalaLog.SSX_TAG, "content:" + httpsURLConnection.getContentLength());
+//            LalaLog.d(LalaLog.SSX_TAG, "content:" + httpsURLConnection.getContentLength());
             request.flush();
             request.close();
         } catch (SocketTimeoutException e) {
@@ -231,7 +231,7 @@ public class HttpUrlconnectionUtil {
      * @throws IOException IO异常
      */
     @NonNull
-    private static HttpURLConnection getHttpsURLConnection(Context context, int timeout, String host) throws IOException {
+    private static HttpURLConnection getHttpsURLConnection(Context context, int timeout, String host, int method) throws IOException {
         URL url = new URL(host);
         HttpURLConnection httpURLConnection = null;
         if (MyApplication.isUseHTTPS) {//双向认证，
@@ -250,7 +250,8 @@ public class HttpUrlconnectionUtil {
             httpURLConnection = (HttpURLConnection) url.openConnection();
         }
         httpURLConnection.setReadTimeout(timeout);
-        httpURLConnection.setRequestMethod("POST");
+        if (HttpMethod.POST == method) httpURLConnection.setRequestMethod("POST");
+        else if (HttpMethod.GET == method) httpURLConnection.setRequestMethod("GET");
         httpURLConnection.setDoInput(true);
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setUseCaches(false);

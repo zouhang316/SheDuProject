@@ -88,9 +88,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         paramers.put("username", phone);
         paramers.put("password", pwd);
         String url = "http://sp.beenvip.net/API/member/login.php?";
-        httpHelper.asyncRequest("login", url, paramers, LoginBean.class, new HttpListener<LoginBean>() {
+        httpHelper.asyncGetRequest(url, paramers, LoginBean.class, new HttpListener<LoginBean>() {
             @Override
             public void onSuccess(LoginBean loginBean) {
+                LalaLog.d("login", loginBean.toString());
                 Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(LoginActivity.this,ChoiceIdentityActivity.class);
                 startActivity(intent);

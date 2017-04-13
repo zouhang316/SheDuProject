@@ -117,9 +117,9 @@ public class LalaLog {
             String[] lines = message.split(LINE_SEPARATOR);
             StringBuilder jsonContent = new StringBuilder();
             for (String line : lines) {
-                jsonContent.append("║ ").append(line).append(LINE_SEPARATOR);
+                jsonContent.append(line).append(LINE_SEPARATOR);
             }
-            i(tagStr, jsonContent.toString());
+            d(tagStr, jsonContent.toString());
             printLine(tagStr, false);
 
         }
@@ -127,9 +127,9 @@ public class LalaLog {
 
     private static void printLine(String tag, boolean isTop) {
         if (isTop) {
-            i(tag, "╔═══════════════════════════════════════════════════════════════════════════════════════");
+            d(tag, "------------------------------------------------------------------");
         } else {
-            i(tag, "╚═══════════════════════════════════════════════════════════════════════════════════════");
+            d(tag, "------------------------------------------------------------------");
         }
     }
 
