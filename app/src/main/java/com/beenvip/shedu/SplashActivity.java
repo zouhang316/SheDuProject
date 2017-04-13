@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.beenvip.shedu.base.BaseActivity;
+import com.beenvip.shedu.user.LoginActivity;
 import com.beenvip.shedu.utils.CommUtils;
 
 /**

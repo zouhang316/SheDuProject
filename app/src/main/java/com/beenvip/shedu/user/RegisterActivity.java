@@ -1,4 +1,4 @@
-package com.beenvip.shedu;
+package com.beenvip.shedu.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.publics.FirstSelectIdentityActivity;
 import com.beenvip.shedu.utils.CommUtils;

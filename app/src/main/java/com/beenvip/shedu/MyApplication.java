@@ -16,6 +16,7 @@ public class MyApplication extends Application {
      * 存储验证码倒计时时间
      */
     public static HashMap<String, Long> longHashMap;
+    public static boolean isUseHTTPS=false;//是否是Https请求
     @Override
     public void onCreate() {
         super.onCreate();

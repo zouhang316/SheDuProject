@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.beenvip.shedu">
+          package="com.beenvip.shedu">
+
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".MyApplication"
@@ -16,29 +17,45 @@
         <activity android:name=".ContractorMainActivity"/>
         <activity android:name=".SupplierMainActivity"/>
         <activity android:name=".FaBaoMianActivity"/>
-        <activity android:name=".LoginActivity" android:theme="@style/LoginTheme"/>
-        <activity android:name=".RegisterActivity" android:theme="@style/LoginTheme"/>
-        <activity android:name=".ForgetPasswordActivity" android:theme="@style/LoginTheme"/>
-        <activity android:name=".SplashActivity" android:theme="@style/Splash_Style">
+        <activity
+            android:name=".user.LoginActivity"
+            android:theme="@style/LoginTheme"/>
+        <activity
+            android:name=".user.RegisterActivity"
+            android:theme="@style/LoginTheme"/>
+        <activity
+            android:name=".user.ForgetPasswordActivity"
+            android:theme="@style/LoginTheme"/>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Splash_Style">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".publics.ChoiceIdentityActivity"/>
         <activity android:name=".publics.FirstSelectIdentityActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            </activity>
+        </activity>
         <activity android:name=".publics.SearchaActivity"/>
         <activity android:name=".contractor.activity.WageHostedActivity"/>
         <activity android:name=".contractor.activity.ProjectDetailsActivity"/>
         <activity android:name=".contractor.activity.AddressSwicthActivity"/>
         <activity android:name=".contractor.activity.SMActivity"/>
         <activity android:name=".publics.DateActivity"/>
-        <activity android:name=".contractor.activity.PersonInforActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".fabaofang.activity.FabaoActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".fabaofang.activity.RecruitmentActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".fabaofang.activity.ReleaseDemandActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".contractor.activity.PersonInforActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".fabaofang.activity.FabaoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".fabaofang.activity.RecruitmentActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity
+            android:name=".fabaofang.activity.ReleaseDemandActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".contractor.activity.JobDetailsActivity"/>
         <activity android:name=".publics.KefuActivity"/>
     </application>

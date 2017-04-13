@@ -19,26 +19,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beenvip.shedu.R;
+import com.beenvip.shedu.http.HttpHelper;
 
 /**
  * Created by ZH on 2017/3/8.
  * 497239511@qq.com
  */
 
-public abstract class  BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
     private FrameLayout mContentLayout;
     private LinearLayout mLinearLayout;
+    public HttpHelper httpHelper;
+
     @Override
-    protected  final void onCreate(@Nullable Bundle savedInstanceState) {
+    protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getDelegate().setContentView(R.layout.activity_base);
+        httpHelper = new HttpHelper(this);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appbarlayout);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setNavigationIcon(R.mipmap.back);
         mContentLayout = (FrameLayout) findViewById(R.id.content);
-        mLinearLayout= (LinearLayout) findViewById(R.id.ll_base);
+        mLinearLayout = (LinearLayout) findViewById(R.id.ll_base);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         setBackBar(true);
@@ -81,6 +85,7 @@ public abstract class  BaseActivity extends AppCompatActivity {
     public <T extends View> T findView(int viewId) {
         return (T) mContentLayout.findViewById(viewId);
     }
+
     public FrameLayout getContentLayout() {
         return mContentLayout;
     }
@@ -112,6 +117,7 @@ public abstract class  BaseActivity extends AppCompatActivity {
             mTitle.setText("");
         }
     }
+
     public void setTitleTextColor(int color) {
         TextView mTitle = (TextView) mToolbar.findViewById(R.id.tv_title);
         mTitle.setTextColor(color);
@@ -218,12 +224,14 @@ public abstract class  BaseActivity extends AppCompatActivity {
         builder.setPositiveButton(R.string.dialog_ok, okListener);
         builder.show();
     }
-    public void setFitsSystemWindows(boolean b){
+
+    public void setFitsSystemWindows(boolean b) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             mLinearLayout.setFitsSystemWindows(b);
         }
 
     }
+
     @Override
     public final boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
