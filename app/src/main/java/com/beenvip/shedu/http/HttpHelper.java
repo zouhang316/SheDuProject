@@ -57,6 +57,7 @@ public class HttpHelper {
      * @return 返回网络请求头
      */
     public HashMap<String, String> commReqHeader() {
+        // TODO: 2017/4/13 请求头的封装需要后后台联调
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("Connection","keep-alive");
         hashMap.put("Content-Type","application/json");
