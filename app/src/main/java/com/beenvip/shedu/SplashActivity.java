@@ -18,9 +18,9 @@ public class SplashActivity extends BaseActivity {
     protected void initData() {
         //检查网络
         if (CommUtils.isNetworkConnected(this)){
-            showToastMsg("OK");
+            //showToastMsg("OK");
         }else {
-            showToastMsg("NO");
+            //showToastMsg("NO");
         }
 
     }

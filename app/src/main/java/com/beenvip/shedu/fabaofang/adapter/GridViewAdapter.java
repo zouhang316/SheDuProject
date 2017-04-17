@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.beenvip.shedu.R;
+import com.beenvip.shedu.user.bean.FenleiBean;
 
 import java.util.List;
 
@@ -17,9 +18,9 @@ import java.util.List;
 
 public class GridViewAdapter extends BaseAdapter {
     private Context context;
-    private List<String> list;
+    private List<FenleiBean.DataBean> list;
 
-    public GridViewAdapter(Context context, List<String> list) {
+    public GridViewAdapter(Context context, List<FenleiBean.DataBean> list) {
         this.context = context;
         this.list = list;
     }
@@ -53,6 +54,9 @@ public class GridViewAdapter extends BaseAdapter {
             convertView.setTag(vh);
         }else {
             vh= (ViewHolder) convertView.getTag();
+        }
+        if (position<list.size()){
+            vh.textView.setText(list.get(position).getName());
         }
 
         return convertView;

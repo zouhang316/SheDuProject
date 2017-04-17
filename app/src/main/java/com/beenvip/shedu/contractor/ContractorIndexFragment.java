@@ -6,16 +6,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+
 import com.beenvip.shedu.CityBean;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.activity.WageHostedActivity;
 import com.beenvip.shedu.contractor.adapter.ListViewAdapter;
-import com.beenvip.shedu.fastjson.FastJsonHelper;
 import com.beenvip.shedu.holder.LocalImageHolderView;
 import com.beenvip.shedu.publics.SearchaActivity;
-import com.beenvip.shedu.httputils.IJSONCallback;
-import com.beenvip.shedu.utils.LalaLog;
 import com.beenvip.shedu.view.MyListView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
@@ -32,35 +30,11 @@ public class ContractorIndexFragment extends BaseFragment implements View.OnClic
     private ConvenientBanner banner;
     private ArrayList<Integer> imageList;
     private RelativeLayout layout;
-    private IJSONCallback<String> callback;
     private MyListView myListView;
     private ImageView search;
     private RadioButton wageHosted;
     @Override
     public void initData(Bundle savedInstanceState) {
-        callback=new IJSONCallback<String>() {
-            @Override
-            public void onSuccess(int what, String response) {
-                switch (what){
-                    case 0:
-                        CityBean b= FastJsonHelper.getObject(response,CityBean.class);
-                        LalaLog.i("size",b.getData().get(0).toString());
-                        break;
-                    case 1:
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(int reason) {
-
-            }
-
-            @Override
-            public void onNetworkCrashed() {
-
-            }
-        };
 
     }
 
@@ -76,8 +50,6 @@ public class ContractorIndexFragment extends BaseFragment implements View.OnClic
         initListener();
         initBanner();
         initData();
-        //new EternityHTTPUtil().connForJSON(1,getContext(), "http://yc.beenvip.net/AppApi/get_phone.php", EternityHTTPUtil.GET, null, callback,false);
-        //new EternityHTTPUtil().connForJSON(0,getContext(), "http://yc.beenvip.net/AppApi/get_fromCity_list.php", EternityHTTPUtil.GET, null, callback,true);
 
     }
 
@@ -135,7 +107,7 @@ public class ContractorIndexFragment extends BaseFragment implements View.OnClic
             case R.id.wagehosted:
                 startActivity(new Intent(getActivity(), WageHostedActivity.class));
         }
-
     }
+
 
 }

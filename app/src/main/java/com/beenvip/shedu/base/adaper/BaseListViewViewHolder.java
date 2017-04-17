@@ -20,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 
 public class BaseListViewViewHolder {
     private SparseArray<View> mViews;
@@ -158,22 +160,22 @@ public class BaseListViewViewHolder {
         return this;
     }
 
-//    /**
-//     * @param viewId
-//     * @param url
-//     * @return
-//     * @2015年8月26日下午3:09:17
-//     * @author emotiona
-//     * @Email emotiona_xiaoshi@126.com
-//     */
-//    public BaseListViewViewHolder setImageUrl(int viewId, String url) {
-//        final ImageView iv = retrieveView(viewId);
-//         Picasso.with(mContext).load(url).error(R.drawable.erro).into(iv);
-//        // 图像处理
-////        Picasso.with(mContext).load(url).resize(72, 72)//设置显示大小
-////                .centerCrop().into(iv);
-//        return this;
-//    }
+    /**
+     * @param viewId
+     * @param bitmap
+     * @return
+     * @2015年8月26日下午3:09:17
+     * @author emotiona
+     * @Email emotiona_xiaoshi@126.com
+     */
+    public BaseListViewViewHolder setImageUrl(int viewId, Bitmap bitmap) {
+        final ImageView iv = retrieveView(viewId);
+         Glide.with(mContext).load(bitmap).into(iv);
+        // 图像处理
+//        Picasso.with(mContext).load(url).resize(72, 72)//设置显示大小
+//                .centerCrop().into(iv);
+        return this;
+    }
 
 //    /***
 //     * @param viewId

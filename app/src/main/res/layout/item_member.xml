@@ -7,9 +7,10 @@
     <ImageView
         android:id="@+id/head"
         android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@mipmap/test2"/>
+        android:layout_height="50dp" />
     <LinearLayout
         android:id="@+id/content"
         android:layout_marginLeft="15dp"
@@ -19,6 +20,7 @@
         android:layout_height="40dp"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/name"
             android:gravity="top"
             android:layout_weight="1"
             android:layout_width="wrap_content"
@@ -26,6 +28,7 @@
             android:textColor="#232323"
             android:text="小明"/>
         <TextView
+            android:id="@+id/phoneNumber"
             android:gravity="bottom"
             android:layout_weight="1"
             android:layout_width="wrap_content"

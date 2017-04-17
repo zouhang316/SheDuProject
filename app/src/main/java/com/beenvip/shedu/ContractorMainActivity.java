@@ -1,19 +1,25 @@
 package com.beenvip.shedu;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import com.beenvip.shedu.contractor.ContractorIndexFragment;
+
 import com.beenvip.shedu.contractor.ChanceFragment;
-import com.beenvip.shedu.contractor.MessageFragment;
+import com.beenvip.shedu.contractor.ContractorIndexFragment;
 import com.beenvip.shedu.contractor.ContractorMineFragment;
+import com.beenvip.shedu.contractor.MessageFragment;
 import com.beenvip.shedu.contractor.MyBanzuFragment;
 import com.beenvip.shedu.event.ShowChance;
+import com.beenvip.shedu.httputils.PermissionMgr;
 import com.beenvip.shedu.utils.ExitAppliation;
+import com.beenvip.shedu.utils.LalaLog;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -57,7 +63,7 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
         rd_mybanzu= (RadioButton) findViewById(R.id.rb_mybanzu);
         initListener();
         isShowMineFragment();
-
+        getReadContactsPermission();
 
     }
     private void showContentFragment(int index, Bundle bundle) {
@@ -211,5 +217,11 @@ public class ContractorMainActivity extends AppCompatActivity implements View.On
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+    }
+    private void getReadContactsPermission(){
+        PermissionMgr.grantPermission(this,new String[]{
+                Manifest.permission.READ_CONTACTS,Manifest.permission.WRITE_CONTACTS
+        });
+
     }
 }

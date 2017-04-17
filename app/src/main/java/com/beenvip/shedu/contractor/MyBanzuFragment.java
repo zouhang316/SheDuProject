@@ -28,7 +28,7 @@ public class MyBanzuFragment extends BaseFragment {
     private TabLayout tabLayout;
     private Button joinBanzu;
     private Button createBanzu;
-    private String tags[]={"成员","项目","详细信息"};
+    private String tags[]={"成员","项目","详细信息","详细信息"};
     @Override
     public void initData(Bundle savedInstanceState) {
 
@@ -40,9 +40,11 @@ public class MyBanzuFragment extends BaseFragment {
         tabLayout= (TabLayout) view.findViewById(R.id.mytablayout);
         joinBanzu= (Button) view.findViewById(R.id.joinbanzu);
         createBanzu= (Button) view.findViewById(R.id.createbanzu);
+        viewPager.setOffscreenPageLimit(4);
         fragmentList=new ArrayList<>();
         fragmentList.add(new MemberFragment());
         fragmentList.add(new ProjectFragment());
+        fragmentList.add(new BanzuInfoFragment());
         fragmentList.add(new BanzuInfoFragment());
         viewPagerAdapter=new ViewPagerAdapter(getChildFragmentManager(),fragmentList,tags);
         viewPager.setAdapter(viewPagerAdapter);

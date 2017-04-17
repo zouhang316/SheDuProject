@@ -5,6 +5,7 @@ import android.content.Context;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.adaper.BaseListViewAdapter;
 import com.beenvip.shedu.base.adaper.BaseListViewViewHolder;
+import com.beenvip.shedu.utils.MyContacts;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * 497239511@qq.com
  */
 
-public class MemberListAdapter extends BaseListViewAdapter {
+public class MemberListAdapter extends BaseListViewAdapter<MyContacts> {
 
     public MemberListAdapter(Context context, List mLists) {
         super(context, mLists);
@@ -25,7 +26,12 @@ public class MemberListAdapter extends BaseListViewAdapter {
     }
 
     @Override
-    public void convert(BaseListViewViewHolder holder, Object o, int position) {
-
+    public void convert(BaseListViewViewHolder holder, MyContacts myContacts, int position) {
+        holder.setText(R.id.name,myContacts.getName());
+        holder.setText(R.id.phoneNumber,myContacts.getPhoneNumbers().get(0));
+        holder.setImageBitmap(R.id.head,myContacts.getHead());
+        //LalaLog.i(myContacts.getHead().toString()+"==========="+position);
     }
+
+
 }

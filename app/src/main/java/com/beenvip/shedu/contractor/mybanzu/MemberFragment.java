@@ -1,16 +1,19 @@
 package com.beenvip.shedu.contractor.mybanzu;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.adapter.MemberListAdapter;
+import com.beenvip.shedu.utils.GetContacts;
+import com.beenvip.shedu.utils.MyContacts;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ZH on 2017/4/5.
@@ -19,29 +22,20 @@ import java.util.List;
 
 public class MemberFragment extends BaseFragment {
     private ListView listView;
+    private ArrayList<MyContacts> myContactses;
     @Override
     public void initData(Bundle savedInstanceState) {
-
     }
 
     @Override
     public void initView(View view, Bundle savedInstanceState) {
-        final List<String> strings=new ArrayList<>();
-        for (int i = 0; i <4 ; i++) {
-            strings.add("");
-        }
         listView= (ListView) view.findViewById(R.id.member_lv);
-        MemberListAdapter adapter=new MemberListAdapter(getContext(),strings);
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+           return;
+        }
+        myContactses= GetContacts.getAllContacts(getActivity());
+        MemberListAdapter adapter=new MemberListAdapter(getContext(),myContactses);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                for (int i = 0; i < strings.size(); i++) {
-                    listView.getChildAt(i).setBackgroundColor(getResources().getColor(R.color.wihte));
-                }
-                listView.getChildAt(position).setBackgroundColor(getResources().getColor(R.color.black));
-            }
-        });
 
     }
 

@@ -8,19 +8,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.beenvip.shedu.http.HttpHelper;
+
 /**
  * Created by ZH on 2017/3/8.
  * 497239511@qq.com
  */
 
 public  abstract class BaseFragment extends Fragment {
+    public HttpHelper httpHelper;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //VolleyHelper.getInstance().init(getActivity());
         initData(savedInstanceState);
+        httpHelper=new HttpHelper(getActivity());
     }
 
     @Override

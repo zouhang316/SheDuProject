@@ -2,21 +2,25 @@ package com.beenvip.shedu.fabaofang.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
-
 import com.beenvip.shedu.R;
+import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.adapter.ListViewAdapter;
 import com.beenvip.shedu.event.ShowFindBanzu;
 import com.beenvip.shedu.fabaofang.activity.FabaoActivity;
+import com.beenvip.shedu.fabaofang.activity.MoreActivity;
 import com.beenvip.shedu.fabaofang.activity.RecruitmentActivity;
 import com.beenvip.shedu.fabaofang.activity.ReleaseDemandActivity;
 import com.beenvip.shedu.fabaofang.adapter.GridViewAdapter;
 import com.beenvip.shedu.holder.LocalImageHolderView;
+import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.user.bean.FenleiBean;
 import com.beenvip.shedu.view.MyGridView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
@@ -24,6 +28,7 @@ import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -43,15 +48,13 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     private ListView listView;
     private RadioButton zhaoGong;
     private RadioButton releaseDemand;
+    private List<FenleiBean.DataBean> beanList;
     @Override
     public void initData(Bundle savedInstanceState) {
         datas=new ArrayList<>();
         for (int i = 0; i < 11; i++) {
             datas.add("");
         }
-
-
-
     }
 
     @Override
@@ -64,17 +67,20 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
         mGridView = (MyGridView) view.findViewById(R.id.gridview);
         zhaoGong= (RadioButton) view.findViewById(R.id.zhaogong);
         releaseDemand= (RadioButton) view.findViewById(R.id.releasedemand);
+        listView.setFocusable(false);
         layout.getBackground().setAlpha(100);
         initListener();
         initBanner();
+        getSortData();
 
-        adapter=new GridViewAdapter(getActivity(),datas);
-        mGridView.setAdapter(adapter);
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position==datas.size()){
-                    EventBus.getDefault().post(new ShowFindBanzu());
+                if (position==beanList.size()){
+                   // EventBus.getDefault().post(new ShowFindBanzu());
+                    Intent intent=new Intent(getActivity(), MoreActivity.class);
+                    intent.putParcelableArrayListExtra("data", (ArrayList<? extends Parcelable>) beanList);
+                    startActivity(intent);
                 }
 
             }
@@ -88,6 +94,26 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     public int getFragmentLayoutId() {
         return R.layout.fragment_fabaoindex;
     }
+
+    public void getSortData(){
+        HashMap<String,String> paramers=new HashMap<>();
+        paramers.put("type","1");
+        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpListener<FenleiBean>() {
+            @Override
+            public void onSuccess(FenleiBean fenleiBean) {
+                beanList=fenleiBean.getData();
+                adapter=new GridViewAdapter(getActivity(),beanList);
+                mGridView.setAdapter(adapter);
+            }
+            @Override
+            public void onFailed(FenleiBean fenleiBean) {
+
+            }
+        });
+    }
+
+
+
     private void initBanner(){
         imageList=new ArrayList<>();
         imageList.add(R.mipmap.test);
@@ -107,17 +133,6 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
         zhaoGong.setOnClickListener(this);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        banner.startTurning(5000);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        banner.stopTurning();
-    }
 
     @Override
     public void onClick(View v) {
@@ -136,6 +151,16 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
                 startActivity(new Intent(getActivity(), ReleaseDemandActivity.class));
                 break;
         }
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        banner.startTurning(5000);
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        banner.stopTurning();
     }
 }

@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.http.HttpListener;
-import com.beenvip.shedu.publics.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.FirstSelectIdentityActivity;
 import com.beenvip.shedu.user.bean.LoginBean;
 import com.beenvip.shedu.utils.CommUtils;
 import com.beenvip.shedu.utils.LalaLog;
@@ -91,16 +91,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         httpHelper.asyncGetRequest(url, paramers, LoginBean.class, new HttpListener<LoginBean>() {
             @Override
             public void onSuccess(LoginBean loginBean) {
-                LalaLog.d("login", loginBean.toString());
+                LalaLog.i("login", loginBean.toString());
                 Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(LoginActivity.this,ChoiceIdentityActivity.class);
+                Intent intent=new Intent(LoginActivity.this,FirstSelectIdentityActivity.class);
                 startActivity(intent);
             }
 
             @Override
             public void onFailed(LoginBean loginBean) {
                 Toast.makeText(LoginActivity.this, loginBean.getErrorInfo(), Toast.LENGTH_SHORT).show();
-                LalaLog.d("login", loginBean.toString());
+                LalaLog.i("login", loginBean.toString());
             }
         });
     }
