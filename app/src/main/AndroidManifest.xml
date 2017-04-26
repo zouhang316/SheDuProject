@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".MyApplication"
@@ -17,9 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service android:name=".service.MessageService"/>
-        <activity android:name=".ContractorMainActivity"/>
-        <activity android:name=".SupplierMainActivity"/>
-        <activity android:name=".FaBaoMianActivity"/>
+        <activity android:name=".ContractorMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".SupplierMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".FaBaoMianActivity" android:screenOrientation="portrait"/>
         <activity
             android:name=".user.LoginActivity"
             android:theme="@style/LoginTheme"/>
@@ -48,7 +50,6 @@
         <activity android:name=".contractor.activity.ProjectDetailsActivity"/>
         <activity android:name=".contractor.activity.AddressSwicthActivity"/>
         <activity android:name=".contractor.activity.SMActivity"/>
-        <activity android:name=".publics.DateActivity"/>
         <activity
             android:name=".contractor.activity.PersonInforActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
@@ -63,9 +64,10 @@
             android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".contractor.activity.JobDetailsActivity"/>
         <activity android:name=".publics.KefuActivity"/>
-        <activity android:name=".TestHttp">
-        </activity>
         <activity android:name=".fabaofang.activity.MoreActivity"/>
+        <activity android:name=".fabaofang.activity.BanzuInfoActivity"/>
+        <activity android:name=".fabaofang.activity.AddProjectActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
 
 </manifest>

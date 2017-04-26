@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="项目名称"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入项目名称"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+
+        <RelativeLayout
+            android:id="@+id/projectclass"
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="工程类别"/>
+
+            <TextView
+                style="@style/ProjectDetailsTextFont"
+                android:text="请选择工程类别"
+                android:drawableRight="@mipmap/ic_right2"
+                android:drawablePadding="5dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="建设单位"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入建设单位"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="设计单位"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入设计单位"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="地质勘查单位"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入地质勘查单位"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="监理单位"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入监理 单位"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="施工单位"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入施工单位"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="占地面积"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入占地面积"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="建筑面积"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入建筑面积"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            android:id="@+id/selectlasttime"
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="项目截至时间"/>
+
+            <TextView
+                android:id="@+id/lasttime"
+                style="@style/ProjectDetailsTextFont"
+                android:text="请选择项目截至时间"
+                android:drawableRight="@mipmap/ic_right2"
+                android:drawablePadding="5dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="项目城市"/>
+
+            <TextView
+                style="@style/ProjectDetailsTextFont"
+                android:text="请选择项目所在城市"
+                android:drawableRight="@mipmap/ic_right2"
+                android:drawablePadding="5dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="项目地址"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入项目地址"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="工程估价"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入工程估价"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="联系人"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入联系人姓名"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="联系方式"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="15576310006"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:layout_centerVertical="true"
+                android:text="上传略缩图" />
+
+            <Button
+                style="@style/ProjectDetailsTextFont"
+                android:layout_margin="6dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:background="@drawable/shape_loginbutton"
+                android:hint="选择文件"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <RelativeLayout
+            style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="联系人"/>
+
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:hint="请输入联系人姓名"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <TextView
+            style="@style/MarginLine"/>
+        <Button
+            android:id="@+id/next"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/shape_loginbutton"
+            android:text="发布需求"
+            android:textColor="@color/wihte"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+
+</ScrollView>

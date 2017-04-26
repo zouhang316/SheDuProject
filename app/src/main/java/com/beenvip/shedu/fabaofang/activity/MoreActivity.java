@@ -6,7 +6,7 @@ import android.widget.ListView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.fabaofang.adapter.MoreAdapter;
-import com.beenvip.shedu.user.bean.FenleiBean;
+import com.beenvip.shedu.publics.bean.FenleiBean;
 
 import java.util.List;
 
@@ -19,10 +19,12 @@ public class MoreActivity extends BaseActivity {
     private ListView listView;
     private MoreAdapter adapter;
     private List<FenleiBean.DataBean> beanList;
+    private String mTitle;
     @Override
     protected void initData() {
-        beanList=getIntent().getParcelableArrayListExtra("data");
-
+        FenleiBean bean=getIntent().getParcelableExtra("data");
+        beanList=bean.getData();
+        mTitle=getIntent().getStringExtra("title");
     }
 
     @Override
@@ -38,9 +40,11 @@ public class MoreActivity extends BaseActivity {
     @Override
     protected void onActivityCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_fabao_index_more);
-        setTitle("班组分类");
+        setTitle(mTitle);
         listView=findView(R.id.morelistview);
-        adapter=new MoreAdapter(this,beanList);
+        adapter=new MoreAdapter(this,beanList,this);
         listView.setAdapter(adapter);
     }
+
+
 }

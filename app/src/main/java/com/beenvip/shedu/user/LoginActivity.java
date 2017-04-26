@@ -102,6 +102,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 Toast.makeText(LoginActivity.this, loginBean.getErrorInfo(), Toast.LENGTH_SHORT).show();
                 LalaLog.i("login", loginBean.toString());
             }
-        });
+        },true);
     }
 }

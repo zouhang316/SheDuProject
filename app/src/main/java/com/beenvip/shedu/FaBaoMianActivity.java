@@ -1,17 +1,21 @@
 package com.beenvip.shedu;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.beenvip.shedu.contractor.ChanceFragment;
 import com.beenvip.shedu.contractor.MessageFragment;
 import com.beenvip.shedu.event.ShowFindBanzu;
 import com.beenvip.shedu.fabaofang.fragment.FaBaoIndexFragment;
+import com.beenvip.shedu.fabaofang.fragment.FabaoFindBanZuFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoMineFragment;
 import com.beenvip.shedu.fabaofang.fragment.FindgysFragment;
 import com.beenvip.shedu.utils.ExitAppliation;
@@ -38,7 +42,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
 
     private FaBaoIndexFragment indexFragment;
     private MessageFragment messageFragment;
-    private ChanceFragment findcbfFragment;
+    private FabaoFindBanZuFragment findBanZuFragment;
     private FindgysFragment findgysFragment;
     private FabaoMineFragment fabaoMineFragment;
 
@@ -51,6 +55,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
+        setFullStyle();
         super.onCreate(savedInstanceState);
         instance=this;
         setContentView(R.layout.activity_mianfabao);
@@ -63,7 +68,9 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         initListener();
         isShowMineFragment();
 
+
     }
+
     private void showContentFragment(int index, Bundle bundle) {
         if (bundle == null) {
             bundle = new Bundle();
@@ -84,12 +91,12 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
                 break;
             case FINDCBS_FLAG:
                 rd_findcbf.setChecked(true);
-                if (findcbfFragment == null) {
-                    findcbfFragment = new ChanceFragment();
-                    findcbfFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, findcbfFragment);
+                if (findBanZuFragment == null) {
+                    findBanZuFragment = new FabaoFindBanZuFragment();
+                    findBanZuFragment.setArguments(bundle);
+                    ft.add(R.id.fl_content, findBanZuFragment);
                 } else {
-                    ft.show(findcbfFragment);
+                    ft.show(findBanZuFragment);
                 }
                 break;
             case FINDGYS_FLAG:
@@ -132,8 +139,8 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         if (indexFragment != null) {
             ft.hide(indexFragment);
         }
-        if (findcbfFragment != null) {
-            ft.hide(findcbfFragment);
+        if (findBanZuFragment != null) {
+            ft.hide(findBanZuFragment);
         }
         if (findgysFragment != null) {
             ft.hide(findgysFragment);
@@ -204,6 +211,17 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         } else {
             ExitAppliation.getInstance().exit();
 
+        }
+    }
+    private void setFullStyle() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
     @Subscribe(threadMode = ThreadMode.MAIN)

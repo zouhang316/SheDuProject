@@ -5,7 +5,8 @@
     android:layout_height="match_parent">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/toolbar_padding">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar2"
@@ -80,7 +81,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/line" />
+                android:background="@color/backgroundColor" />
 
             <TextView
                 android:id="@+id/chenyuanguanli"
@@ -95,7 +96,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/line" />
+                android:background="@color/backgroundColor" />
 
             <TextView
                 android:id="@+id/jihuaguanli"
@@ -111,7 +112,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/line" />
+            android:background="@color/backgroundColor" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -133,7 +134,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/line" />
+                android:background="@color/backgroundColor" />
 
             <TextView
                 android:id="@+id/xiangmushezhi"
@@ -148,7 +149,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/line" />
+                android:background="@color/backgroundColor" />
 
             <TextView
                 android:id="@+id/ziliaoguanli"
@@ -164,7 +165,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/line" />
+            android:background="@color/backgroundColor" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -186,7 +187,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/line" />
+                android:background="@color/backgroundColor" />
 
             <TextView
                 android:id="@+id/xiangmudongtai"
@@ -201,7 +202,7 @@
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/line" />
+                android:background="@color/backgroundColor" />
 
             <TextView
                 android:layout_width="0dp"

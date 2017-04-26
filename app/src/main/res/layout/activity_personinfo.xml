@@ -13,6 +13,7 @@
 
             <EditText
                 style="@style/ProjectDetailsTextFont"
+                android:layout_width="250dp"
                 android:layout_alignParentRight="true"
                 android:background="@null"
                 android:gravity="right"
@@ -22,131 +23,82 @@
 
         <TextView
             style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
-            <TextView
-                style="@style/WageFontStyle"
-                android:text="年龄" />
-
-            <EditText
-                style="@style/ProjectDetailsTextFont"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="请输入您的年龄"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <TextView
-            style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+        <RelativeLayout style="@style/WageRelativeLayoutStyle"
+            android:id="@+id/sex">
             <TextView
                 style="@style/WageFontStyle"
                 android:text="性别" />
 
-            <EditText
+            <TextView
+                android:id="@+id/sex_tv"
                 style="@style/ProjectDetailsTextFont"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="男"
+                android:drawablePadding="10dp"
+                android:drawableRight="@mipmap/ic_right2"
+                android:text="请选择性别"
                 android:textSize="15sp" />
         </RelativeLayout>
 
         <TextView
             style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+        <RelativeLayout style="@style/WageRelativeLayoutStyle"
+            android:id="@+id/workyear">
             <TextView
                 style="@style/WageFontStyle"
                 android:text="工作年限" />
 
-            <EditText
+            <TextView
+                android:id="@+id/year_tv"
                 style="@style/ProjectDetailsTextFont"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="3年"
+                android:drawableRight="@mipmap/ic_right2"
+                android:drawablePadding="10dp"
+                android:text="年"
                 android:textSize="15sp" />
         </RelativeLayout>
 
         <TextView
             style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+
+        <RelativeLayout style="@style/WageRelativeLayoutStyle"
+            android:id="@+id/education">
+
             <TextView
                 style="@style/WageFontStyle"
-                android:text="工作资历" />
+                android:text="学历"
+                android:id="@+id/textView8" />
 
-            <EditText
+            <TextView
+                android:id="@+id/education_tv"
                 style="@style/ProjectDetailsTextFont"
+                android:drawablePadding="10dp"
+                android:drawableRight="@mipmap/ic_right2"
+                android:text="请选择学历"
+                android:textSize="15sp"
+                android:layout_alignBaseline="@+id/textView8"
+                android:layout_alignBottom="@+id/textView8"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="工作资历"
-                android:textSize="15sp" />
+                android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
         <TextView
             style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+        <RelativeLayout style="@style/WageRelativeLayoutStyle"
+            android:id="@+id/gongzhong">
             <TextView
                 style="@style/WageFontStyle"
-                android:text="联系电话" />
+                android:text="工种类别" />
 
-            <EditText
+            <TextView
+                android:id="@+id/gongzhong_tv"
                 style="@style/ProjectDetailsTextFont"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="13888888888"
+                android:drawableRight="@mipmap/ic_right2"
+                android:drawablePadding="10dp"
+                android:text="请选择工种类别"
                 android:textSize="15sp" />
         </RelativeLayout>
 
-        <TextView
-            style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
-            <TextView
-                style="@style/WageFontStyle"
-                android:text="籍贯" />
-
-            <EditText
-                style="@style/ProjectDetailsTextFont"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="选择省 市"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <TextView
-            style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
-            <TextView
-                style="@style/WageFontStyle"
-                android:text="工种" />
-
-            <EditText
-                style="@style/ProjectDetailsTextFont"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="选择工种"
-                android:textSize="15sp" />
-        </RelativeLayout>
-
-        <TextView
-            style="@style/MarginLine"/>
-        <RelativeLayout style="@style/WageRelativeLayoutStyle">
-            <TextView
-                style="@style/WageFontStyle"
-                android:text="期望薪资" />
-
-            <EditText
-                style="@style/ProjectDetailsTextFont"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="面议"
-                android:textSize="15sp" />
-        </RelativeLayout>
         <TextView
             style="@style/MarginLine"/>
         <RelativeLayout style="@style/WageRelativeLayoutStyle">
@@ -158,11 +110,26 @@
                 android:layout_alignParentRight="true"
                 android:background="@null"
                 android:gravity="right"
-                android:hint="选择省 市"
+                android:maxLength="10"
+                android:hint="填写范例：长沙市，湘潭市"
                 android:textSize="15sp" />
         </RelativeLayout>
         <TextView
             style="@style/MarginLine"/>
+        <RelativeLayout style="@style/WageRelativeLayoutStyle">
+            <TextView
+                style="@style/WageFontStyle"
+                android:text="家庭住址" />
+            <EditText
+                style="@style/ProjectDetailsTextFont"
+                android:layout_width="250dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="right"
+                android:maxLines="2"
+                android:hint="请输入家庭住址"
+                android:textSize="15sp" />
+        </RelativeLayout>
         <Button
             android:id="@+id/save"
             android:layout_width="290dp"

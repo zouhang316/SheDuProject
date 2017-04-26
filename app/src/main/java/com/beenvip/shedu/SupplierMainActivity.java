@@ -1,17 +1,21 @@
 package com.beenvip.shedu;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.beenvip.shedu.contractor.ChanceFragment;
 import com.beenvip.shedu.contractor.MessageFragment;
 import com.beenvip.shedu.supplier.SupplierMineFragment;
-import com.beenvip.shedu.supplier.index.SupplierIndexFragment;
+import com.beenvip.shedu.supplier.SupplierIndexFragment;
 import com.beenvip.shedu.utils.ExitAppliation;
 
 import java.util.Timer;
@@ -44,6 +48,7 @@ public class SupplierMainActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         instance=this;
+        setFullStyle();
         setContentView(R.layout.activity_mainsupplier);
         rd_index= (RadioButton) findViewById(R.id.rb_index);
         rd_chance= (RadioButton) findViewById(R.id.rb_chance);
@@ -177,6 +182,17 @@ public class SupplierMainActivity extends AppCompatActivity implements View.OnCl
         } else {
             ExitAppliation.getInstance().exit();
 
+        }
+    }
+    private void setFullStyle() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
 

@@ -11,7 +11,7 @@
             android:id="@+id/baselistview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@color/line"
+            android:divider="@color/backgroundColor"
             android:dividerHeight="1dp">
 
         </com.beenvip.shedu.view.LoadMoreListView>

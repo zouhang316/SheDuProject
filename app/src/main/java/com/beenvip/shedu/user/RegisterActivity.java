@@ -24,6 +24,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText edit_phone;
     private EditText edit_code;
     private EditText edit_pwd;
+    private EditText edit_name;
     private ImageView back;
     @Override
     protected void initData() {
@@ -52,6 +53,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         edit_phone=findView(R.id.edit_phone);
         edit_code=findView(R.id.edit_code);
         edit_pwd=findView(R.id.edit_pwd);
+        edit_name=findView(R.id.edit_name);
         back=findView(R.id.back);
     }
 
@@ -73,8 +75,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         String phone=edit_phone.getText().toString().trim();
         String code=edit_code.getText().toString().trim();
         String pwd=edit_pwd.getText().toString().trim();
+        String name=edit_name.getText().toString().trim();
         if (!CommUtils.isMobile(phone)){
             showMessageDialog("提示", "请输入正确的手机号码！");
+            return;
+        }
+        if (name.isEmpty()){
+            showMessageDialog("提示", "真实姓名不能为空！");
             return;
         }
         if (code.isEmpty()){

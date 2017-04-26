@@ -2,40 +2,134 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/toolbar_padding"
+        android:background="@color/colorPrimaryDark">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="44dp"
-            android:background="@drawable/shape_gradient_toolbar">
+            android:background="@drawable/shape_gradient_toolbar"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:text="@string/app_name"
                 android:textColor="@color/wihte"
                 android:textSize="17sp" />
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginRight="10dp"
-                android:background="@mipmap/ic_search" />
+                android:text="总承包商"
+                android:textColor="@color/wihte"
+                android:textSize="13sp" />
 
         </android.support.v7.widget.Toolbar>
+
+        <TextView
+            style="@style/MarginLine"
+            android:layout_height="1px" />
+
+        <RelativeLayout
+            android:id="@+id/touming"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/colorToolbar">
+            <TextView
+                android:id="@+id/du"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="13°"
+                android:textColor="@color/wihte"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignTop="@+id/du"
+                android:layout_toRightOf="@+id/du"
+                android:text="长沙"
+                android:textColor="@color/wihte"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/kongqi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/city"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@+id/du"
+                android:text="空气优"
+                android:textColor="@color/wihte"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/qing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/city"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/city"
+                android:drawablePadding="5dp"
+                android:drawableRight="@mipmap/ic_sun"
+                android:text="晴"
+                android:textColor="@color/wihte"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/kongqi"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/city"
+                android:text="40"
+                android:textColor="@color/wihte"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/city"
+                android:layout_marginRight="15dp"
+                android:text="2017-04-21 星期五"
+                android:textColor="@color/wihte"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/date"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/date"
+                android:layout_marginRight="15dp"
+                android:text="10:08:25"
+                android:textColor="@color/wihte"
+                android:textSize="12sp" />
+        </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never"
         android:background="@color/backgroundColor"
+        android:overScrollMode="never"
         android:scrollbars="none">
 
         <LinearLayout
@@ -43,94 +137,20 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <FrameLayout
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/banner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="60dp">
 
-                <com.bigkoo.convenientbanner.ConvenientBanner
-                    android:id="@+id/banner"
-                    android:layout_width="match_parent"
-                    android:layout_height="135dp">
-
-                </com.bigkoo.convenientbanner.ConvenientBanner>
-                <RelativeLayout
-                    android:id="@+id/touming"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#FF1D1D1D">
-
-                    <TextView
-                        android:id="@+id/du"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="30dp"
-                        android:text="30°"
-                        android:textColor="@color/wihte"
-                        android:textSize="38sp" />
-
-                    <TextView
-                        android:id="@+id/city"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="13dp"
-                        android:layout_toRightOf="@+id/du"
-                        android:text="湖南长沙"
-                        android:textColor="@color/wihte"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/kongqi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/city"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="2dp"
-                        android:layout_toRightOf="@+id/du"
-                        android:text="空气优"
-                        android:textColor="@color/wihte"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/qing"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/city"
-                        android:layout_marginLeft="15dp"
-                        android:layout_toRightOf="@id/city"
-                        android:drawablePadding="5dp"
-                        android:drawableRight="@mipmap/ic_sun"
-                        android:text="晴"
-                        android:textColor="@color/wihte"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/kongqi"
-                        android:layout_marginLeft="15dp"
-                        android:layout_toRightOf="@id/city"
-                        android:text="40"
-                        android:textColor="@color/wihte"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
-                        android:text="我是发包商"
-                        android:textColor="@color/wihte"
-                        android:textSize="12sp" />
-                </RelativeLayout>
-            </FrameLayout>
+            </com.bigkoo.convenientbanner.ConvenientBanner>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:background="@color/wihte"
+                android:orientation="vertical"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -138,10 +158,10 @@
                     android:layout_weight="1">
 
                     <RadioButton
-                        android:id="@+id/fabao"
+                        android:id="@+id/zhaobanzu"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:text="发包" />
+                        android:text="招募班组" />
 
                     <RadioButton
                         android:id="@+id/findbanzu"
@@ -163,6 +183,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1">
 
                     <RadioButton
@@ -190,10 +211,17 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:layout_marginTop="10dp"
-                android:background="@color/wihte"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/wihte">
+
+                <TextView
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/colorPrimary" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -201,46 +229,49 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
                     android:text="班组分类"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textColor="@color/defultTextColor"
+                    android:textSize="14sp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="15dp"
-                    android:background="@mipmap/ic_right" />
+
             </RelativeLayout>
 
-            <TextView
-                style="@style/Line"/>
+            <TextView style="@style/Line" />
 
             <com.beenvip.shedu.view.MyGridView
                 android:id="@+id/gridview"
-                android:background="@color/wihte"
-                android:padding="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:numColumns="4"
+                android:background="@color/wihte"
+                android:focusable="false"
                 android:horizontalSpacing="10dp"
-                android:verticalSpacing="10dp"
-                android:focusable="false" />
+                android:numColumns="4"
+                android:padding="15dp"
+                android:verticalSpacing="10dp" />
 
             <RelativeLayout
-                android:layout_marginTop="10dp"
-                android:background="@color/wihte"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/wihte">
+
+                <TextView
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/colorPrimary" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginStart="13dp"
                     android:text="推荐班组"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textColor="@color/defultTextColor"
+                    android:textSize="14sp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -251,15 +282,22 @@
                     android:src="@mipmap/ic_right" />
             </RelativeLayout>
 
+            <TextView style="@style/Line" />
+
             <TextView
-                style="@style/Line"/>
+                android:id="@+id/empty_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/wihte"
+                android:gravity="center"
+                android:visibility="gone" />
 
             <com.beenvip.shedu.view.MyListView
                 android:id="@+id/listview"
-                android:background="@color/wihte"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@color/line"
+                android:background="@color/wihte"
+                android:divider="@color/backgroundColor"
                 android:dividerHeight="1dp"
                 android:focusable="false" />
         </LinearLayout>

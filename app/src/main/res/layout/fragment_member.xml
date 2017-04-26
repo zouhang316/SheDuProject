@@ -4,7 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swperefreshi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/empty"/>
+    </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
     <EditText
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="#F5F5F5"
@@ -13,18 +29,24 @@
         android:textSize="15sp"
         android:hint="请输入姓名或手机号"
         android:drawableRight="@mipmap/ic_search"/>
-    <ListView
-        android:background="@color/wihte"
-        android:id="@+id/member_lv"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@color/line"
-        android:dividerHeight="1dp"
-        android:scrollbars="none"
-        android:overScrollMode="never"
-        >
-    </ListView>
+
+
+        <ListView
+            android:background="@color/wihte"
+            android:id="@+id/member_lv"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@color/backgroundColor"
+            android:dividerHeight="1dp"
+            android:scrollbars="none"
+            android:descendantFocusability="blocksDescendants"
+            android:overScrollMode="never"
+            >
+        </ListView>
+
+
+
 
 </LinearLayout>

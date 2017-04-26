@@ -1,4 +1,4 @@
-package com.beenvip.shedu.user.bean;
+package com.beenvip.shedu.publics.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

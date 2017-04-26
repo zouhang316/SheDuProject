@@ -1,14 +1,15 @@
 package com.beenvip.shedu.fabaofang.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.TextView;
 
 import com.beenvip.shedu.R;
-import com.beenvip.shedu.user.bean.FenleiBean;
+import com.beenvip.shedu.publics.bean.FenleiBean;
+import com.beenvip.shedu.view.MyGridView;
 
 import java.util.List;
 
@@ -20,10 +21,12 @@ import java.util.List;
 public class MoreAdapter extends BaseAdapter {
     private Context context;
     private List<FenleiBean.DataBean> list;
+    private Activity activity;
 
-    public MoreAdapter(Context context, List<FenleiBean.DataBean> list) {
+    public MoreAdapter(Context context, List<FenleiBean.DataBean> list,Activity activity) {
         this.context = context;
         this.list = list;
+        this.activity=activity;
     }
 
     @Override
@@ -47,7 +50,7 @@ public class MoreAdapter extends BaseAdapter {
         if (convertView==null){
             holder=new ViewHolder();
             convertView=View.inflate(context,R.layout.item_more,null);
-            holder.gridView= (GridView) convertView.findViewById(R.id.more_gridview);
+            holder.gridView= (MyGridView) convertView.findViewById(R.id.more_gridview);
             holder.title= (TextView) convertView.findViewById(R.id.title);
             convertView.setTag(holder);
         }else {
@@ -55,12 +58,12 @@ public class MoreAdapter extends BaseAdapter {
         }
         holder.title.setText(list.get(position).getName());
         List<FenleiBean.DataBean.SubBean> subBeanList=list.get(position).getSub();
-        MoreChildGridAdapter adapter=new MoreChildGridAdapter(context,subBeanList);
+        MoreChildGridAdapter adapter=new MoreChildGridAdapter(context,subBeanList,activity);
         holder.gridView.setAdapter(adapter);
         return convertView;
     }
     class ViewHolder{
-        GridView gridView;
+        MyGridView gridView;
         TextView title;
     }
 }

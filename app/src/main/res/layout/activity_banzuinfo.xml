@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wihte">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="20dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/test2" />
+
+        <TextView
+            android:id="@+id/banzuname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/head"
+            android:layout_toRightOf="@id/head"
+            android:text="周志家班组"
+            android:textColor="@color/defultTextColor"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/banzutype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banzuname"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/head"
+            android:text="钢筋班"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/head"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/head"
+            android:textSize="13sp"
+            android:text="1388888888" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/backgroundColor"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/myinfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="基本信息"
+            android:textColor="@color/defultTextColor"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/achievement"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="业绩"
+            android:textColor="@color/defultTextColor"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/evaluate"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="评价"
+            android:textColor="@color/defultTextColor"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="-5dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/indcator_a"
+                android:layout_centerInParent="true"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/indcator_b"
+                android:layout_centerInParent="true"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/indcator_c"
+                android:layout_centerInParent="true"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/backgroundColor"/>
+    <FrameLayout
+        android:id="@+id/banzu_fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+</LinearLayout>

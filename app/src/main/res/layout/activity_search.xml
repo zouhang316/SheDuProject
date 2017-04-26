@@ -56,7 +56,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/line"/>
+        android:background="@color/backgroundColor"/>
 
     <GridView
         android:id="@+id/hotjob_gv"
@@ -83,7 +83,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/line"/>
+        android:background="@color/backgroundColor"/>
 
     <GridView
         android:id="@+id/history_gv"

@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import com.beenvip.shedu.base.HttpBaseResponseBean;
 import com.beenvip.shedu.fastjson.FastJsonHelper;
 import com.beenvip.shedu.utils.LalaLog;
+import com.beenvip.shedu.view.WaitDialog;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,12 +19,13 @@ import java.util.Map;
 
 public class HttpHelper {
     private Context mContext;
-
+    private static WaitDialog mWaitDialog;
     public HttpHelper(Context context) {
         this.mContext = context;
+        mWaitDialog=new WaitDialog(context);
     }
 
-    public static final int DEFAULT_TIME_OUT = 60 * 1000; //默认网络请求超时时间
+    public static final int DEFAULT_TIME_OUT = 20 * 1000; //默认网络请求超时时间
 
     /**
      * 网络请求、异步操作
@@ -33,12 +35,13 @@ public class HttpHelper {
      * @param cls      需要解析的Bean
      * @param listener 回调监听
      */
-    public void asyncPostRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpListener listener) {
+    public void asyncPostRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpListener listener,  boolean isLoading) {
         LalaLog.d(LalaLog.SSX_TAG, "-----------------------------request start------------------------");
         LalaLog.d(LalaLog.SSX_TAG, "url:" + url);
         LalaLog.d(LalaLog.SSX_TAG, "requestBody:" + paramers.toString());
         LalaLog.d(LalaLog.SSX_TAG, "requestHeader:" + commReqHeader().toString());
         LalaLog.d(LalaLog.SSX_TAG, "-----------------------------request end------------------------");
+        showProgress(isLoading);
         new AsyncTask<String, Void, String>() {
             @Override
             protected void onPostExecute(String result) {
@@ -47,8 +50,10 @@ public class HttpHelper {
                 LalaLog.i(LalaLog.SSX_TAG, "-----------------------------response end------------------------");
                 HttpBaseResponseBean httpBaseResponseBean = FastJsonHelper.getObject(result, cls);
                 if (httpBaseResponseBean.isResult()) {
+                    dismiss();
                     listener.onSuccess(httpBaseResponseBean);
                 } else {
+                    dismiss();
                     listener.onFailed(httpBaseResponseBean);
                 }
             }
@@ -68,12 +73,13 @@ public class HttpHelper {
      * @param cls      需要解析的Bean
      * @param listener 回调监听
      */
-    public void asyncGetRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpListener listener) {
+    public void asyncGetRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpListener listener,  boolean isLoading) {
         LalaLog.d(LalaLog.SSX_TAG, "-----------------------------request start------------------------");
         LalaLog.d(LalaLog.SSX_TAG, "url:" + url);
         LalaLog.d(LalaLog.SSX_TAG, "requestBody:" + paramers.toString());
         LalaLog.d(LalaLog.SSX_TAG, "requestHeader:" + commReqHeader().toString());
         LalaLog.d(LalaLog.SSX_TAG, "-----------------------------request end------------------------");
+        showProgress(isLoading);
         new AsyncTask<String, Void, String>() {
             @Override
             protected void onPostExecute(String result) {
@@ -82,8 +88,10 @@ public class HttpHelper {
                 LalaLog.d(LalaLog.SSX_TAG, "-----------------------------response end------------------------");
                 HttpBaseResponseBean httpBaseResponseBean = FastJsonHelper.getObject(result, cls);
                 if (httpBaseResponseBean.isResult()) {
+                    dismiss();
                     listener.onSuccess(httpBaseResponseBean);
                 } else {
+                    dismiss();
                     listener.onFailed(httpBaseResponseBean);
                 }
             }
@@ -126,4 +134,20 @@ public class HttpHelper {
         hashMap.put("Content-Type", "application/json");
         return hashMap;
     }
+    private static void showProgress(boolean isLoading) {
+        if (isLoading) {
+            if (mWaitDialog.isShowing()) {
+                dismiss();
+            }
+            mWaitDialog.setCanceledOnTouchOutside(false);
+            mWaitDialog.show();
+        }
+    }
+
+    private static void dismiss() {
+        if (mWaitDialog != null )
+            mWaitDialog.dismiss();
+    }
+
+
 }

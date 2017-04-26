@@ -2,7 +2,6 @@ package com.beenvip.shedu.utils;
 
 import android.graphics.Bitmap;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +11,7 @@ import java.util.List;
 
 public class MyContacts {
     private String name;
-    private List<String> phoneNumbers=new ArrayList<>();
+    private String phoneNumber;
     private Bitmap head;
     private List<String> emails;
 
@@ -24,12 +23,12 @@ public class MyContacts {
         this.name = name;
     }
 
-    public List<String> getPhoneNumbers() {
-        return phoneNumbers;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhoneNumbers(List<String> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public Bitmap getHead() {

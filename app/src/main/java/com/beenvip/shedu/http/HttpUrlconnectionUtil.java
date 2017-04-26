@@ -37,6 +37,8 @@ import static java.net.HttpURLConnection.HTTP_VERSION;
  */
 
 public class HttpUrlconnectionUtil {
+
+
     /***
      * 向服务器请求数据
      *
@@ -117,6 +119,7 @@ public class HttpUrlconnectionUtil {
             errMsgMap.put("result", false);
             errMsgMap.put("ErrorCode", responseCode + "");
             errMsgMap.put("ErrorInfo", "IOException");
+            LalaLog.e("zouhang",e.getMessage());
             response = JSON.toJSONString(errMsgMap);
             return response;
         } finally {
@@ -304,7 +307,8 @@ public class HttpUrlconnectionUtil {
             e.printStackTrace();
         }
         resultData = new String(byteArrayOutputStream.toByteArray());
-        LalaLog.d(LalaLog.SSX_TAG, "response:" + resultData);
+        //LalaLog.d(LalaLog.SSX_TAG, "response:" + resultData);
         return resultData;
     }
+
 }
