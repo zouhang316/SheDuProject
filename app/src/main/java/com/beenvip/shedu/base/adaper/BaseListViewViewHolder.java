@@ -383,6 +383,10 @@ public class BaseListViewViewHolder {
         view.setOnClickListener(listener);
         return this;
     }
+    public BaseListViewViewHolder setOnItemClickListener(View.OnClickListener listener){
+        mConvertView.setOnClickListener(listener);
+        return  this;
+    }
 
     /**
      * @param viewId

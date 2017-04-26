@@ -4,39 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:overScrollMode="never"
+    android:background="@color/backgroundColor"
     android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#e0e0e0"
-        android:paddingBottom="30dp"
         android:orientation="vertical">
         <RelativeLayout
             android:paddingTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="190dp"
             android:background="@mipmap/minebackground">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:textColor="@color/wihte"
-                android:layout_centerHorizontal="true"
-                android:text="我的"/>
-            <ImageView
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:src="@mipmap/menu"/>
             <ImageView
                 android:id="@+id/head"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:layout_marginTop="50dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
                 android:src="@mipmap/ic_launcher_round"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"/>
             <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
@@ -44,56 +30,46 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/head"
                 android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/wihte"
-                android:text="钱多多"/>
-            <TextView
-                android:id="@+id/info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/name"
-                android:layout_marginTop="5dp"
                 android:textSize="13sp"
                 android:textColor="@color/wihte"
-                android:text="深圳一安建筑有限公司"/>
-
+                android:text="15576310006"/>
 
             </RelativeLayout>
         <LinearLayout
-            android:layout_marginTop="-20dp"
             android:background="@drawable/shape_radius"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:orientation="horizontal">
+
             <RelativeLayout
-                android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:gravity="center">
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <Button
                     android:id="@+id/fabao"
-                    android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
                     android:background="@null"
-                    android:drawableTop="@mipmap/ic_findjob"
-                    android:textColor="@color/radiobuttonTextColor"
                     android:drawablePadding="5dp"
-                    android:text="发包"/>
+                    android:drawableTop="@mipmap/ic_findjob"
+                    android:text="招募班组"
+                    android:textColor="@color/radiobuttonTextColor" />
+
                 <TextView
-                    android:layout_marginTop="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/fabao"
                     android:layout_centerHorizontal="true"
-                    android:textSize="10sp"
-                    android:text="立即发包"/>
+                    android:layout_marginTop="2dp"
+                    android:text="发布信息"
+                    android:textSize="10sp" />
 
             </RelativeLayout>
+
             <TextView
                 android:layout_gravity="center"
                 android:layout_width="1dp"
@@ -130,26 +106,29 @@
 
             </RelativeLayout>
         </LinearLayout>
+        <TextView
+            android:background="@color/gray"
+            style="@style/Line" />
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="135dp"
+            android:layout_height="210dp"
             android:orientation="vertical"
-            android:paddingRight="15dp"
-            android:paddingLeft="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/shape_radius">
             <RelativeLayout
                 android:id="@+id/contractor_userinfo"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center">>
+                android:gravity="center">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/minefontcolor"
                     android:text="我的资料"/>
                 <TextView
@@ -159,12 +138,14 @@
                     android:textSize="12sp"
                     android:drawableRight="@mipmap/ic_right2"
                     android:drawablePadding="5dp"
-                    android:text="完善资料有助于找到工作"/>
+                    android:text="完善资料"/>
             </RelativeLayout>
             <TextView
                 style="@style/Line"/>
             <RelativeLayout
                 android:id="@+id/smyz"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -172,21 +153,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/minefontcolor"
-                    android:text="实名认证"/>
+                    android:text="实名认证"
+                    android:id="@+id/textView2" />
                 <TextView
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:drawableRight="@mipmap/ic_right2"
                     android:drawablePadding="5dp"
-                    android:text="认证有助于找到工作"/>
+                    android:text=""
+                    android:layout_alignTop="@+id/textView2"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
             </RelativeLayout>
             <TextView
                 style="@style/Line"/>
             <RelativeLayout
+                android:id="@+id/kefu"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -194,73 +181,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/minefontcolor"
-                    android:text="人员管理"/>
+                    android:text="联系客服"
+                    android:layout_alignBaseline="@+id/textView"
+                    android:layout_alignBottom="@+id/textView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
                 <TextView
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableRight="@mipmap/ic_right2"
 
-                    />
-            </RelativeLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="135dp"
-            android:orientation="vertical"
-            android:paddingRight="45dp"
-            android:paddingLeft="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/shape_radius">
-            <RelativeLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="center">>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@color/minefontcolor"
-                    android:text="电话记录"/>
-                <TextView
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:drawableRight="@mipmap/ic_right2"
-                    android:drawablePadding="5dp" />
+                    android:id="@+id/textView" />
             </RelativeLayout>
             <TextView
                 style="@style/Line"/>
             <RelativeLayout
-                android:id="@+id/kefu"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="center">>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@color/minefontcolor"
-                    android:text="联系客服"/>
-                <TextView
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:drawableRight="@mipmap/ic_right2"
-                    android:drawablePadding="5dp" />
-            </RelativeLayout>
-            <TextView
-                style="@style/Line"/>
-            <RelativeLayout
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
                 android:id="@+id/switchidentity"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -269,7 +209,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/minefontcolor"
                     android:text="切换身份"/>
                 <TextView
@@ -281,9 +221,37 @@
                     android:drawablePadding="5dp"
                     android:text="当前为总包"/>
             </RelativeLayout>
+            <TextView
+                style="@style/Line"/>
 
+            <RelativeLayout
+                android:id="@+id/setting"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置"
+                    android:textColor="@color/minefontcolor"
+                    android:textSize="12sp"
+                    android:layout_alignTop="@+id/textView6"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@mipmap/ic_right2"
+                    android:textSize="12sp"
+                    android:id="@+id/textView6" />
+            </RelativeLayout>
         </LinearLayout>
-
-    </LinearLayout>
+        </LinearLayout>
 
 </ScrollView>

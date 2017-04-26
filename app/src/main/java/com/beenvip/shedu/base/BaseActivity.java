@@ -1,6 +1,7 @@
 package com.beenvip.shedu.base;
 
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -37,6 +38,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getDelegate().setContentView(R.layout.activity_base);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         httpHelper = new HttpHelper(this);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appbarlayout);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);

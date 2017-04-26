@@ -22,8 +22,8 @@ public  abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initData(savedInstanceState);
         httpHelper=new HttpHelper(getActivity());
+        initData(savedInstanceState);
     }
 
     @Override

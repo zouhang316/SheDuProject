@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        style="@style/WageRelativeLayoutStyle">
+        <TextView
+            style="@style/WageFontStyle"
+            android:text="工作地区"/>
+
+        <TextView
+            android:id="@+id/city"
+            style="@style/ProjectDetailsTextFont"
+            android:text="长沙"
+            android:textColor="@color/defultTextColor"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView
+        style="@style/MarginLine"/>
+    <RelativeLayout
+        style="@style/WageRelativeLayoutStyle">
+        <TextView
+            style="@style/WageFontStyle"
+            android:text="人员规模"/>
+
+        <TextView
+            android:id="@+id/personnumber"
+            style="@style/ProjectDetailsTextFont"
+            android:text="60人"
+            android:textColor="@color/defultTextColor"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView
+        style="@style/MarginLine"/>
+    <RelativeLayout
+        style="@style/WageRelativeLayoutStyle">
+        <TextView
+            style="@style/WageFontStyle"
+            android:text="负责人"/>
+
+        <TextView
+            android:id="@+id/contact"
+            android:textColor="@color/defultTextColor"
+            style="@style/ProjectDetailsTextFont"
+            android:text="王老五"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView
+        style="@style/MarginLine"/>
+</LinearLayout>

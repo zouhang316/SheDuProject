@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.beenvip.shedu.R;
-import com.beenvip.shedu.user.bean.FenleiBean;
+import com.beenvip.shedu.fabaofang.bean.BanzuBean;
 
 import java.util.List;
 
@@ -18,9 +18,9 @@ import java.util.List;
 
 public class GridViewAdapter extends BaseAdapter {
     private Context context;
-    private List<FenleiBean.DataBean> list;
+    private List<BanzuBean.DataBean> list;
 
-    public GridViewAdapter(Context context, List<FenleiBean.DataBean> list) {
+    public GridViewAdapter(Context context, List<BanzuBean.DataBean> list) {
         this.context = context;
         this.list = list;
     }

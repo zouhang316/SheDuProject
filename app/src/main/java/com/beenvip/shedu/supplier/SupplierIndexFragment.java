@@ -1,8 +1,7 @@
-package com.beenvip.shedu.supplier.index;
+package com.beenvip.shedu.supplier;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RelativeLayout;
 
 import com.beenvip.shedu.CityBean;
 import com.beenvip.shedu.R;
@@ -24,7 +23,6 @@ import java.util.List;
 public class SupplierIndexFragment extends BaseFragment {
     private ConvenientBanner banner;
     private ArrayList<Integer> imageList;
-    private RelativeLayout layout;
     private MyListView myListView;
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -34,10 +32,8 @@ public class SupplierIndexFragment extends BaseFragment {
     @Override
     public void initView(View view, Bundle savedInstanceState) {
         banner= (ConvenientBanner) view.findViewById(R.id.banner);
-        layout= (RelativeLayout) view.findViewById(R.id.touming);
         myListView= (MyListView) view.findViewById(R.id.listview);
         myListView.setFocusable(false);
-        layout.getBackground().setAlpha(100);
         initBanner();
         initData();
     }

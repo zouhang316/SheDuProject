@@ -8,7 +8,6 @@
         android:id="@+id/head"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
         android:layout_width="50dp"
         android:layout_height="50dp" />
     <LinearLayout
@@ -38,15 +37,16 @@
     </LinearLayout>
     <ImageView
         android:id="@+id/message"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="15dp"
         android:background="@mipmap/message"/>
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/callphone"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_toLeftOf="@id/message"
         android:layout_centerVertical="true"
         android:layout_marginRight="20dp"

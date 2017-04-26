@@ -15,7 +15,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:dividerHeight="1dp"
-        android:divider="@color/line"
+        android:divider="@color/backgroundColor"
         android:background="@color/wihte"
         android:scrollbars="none"/>
 

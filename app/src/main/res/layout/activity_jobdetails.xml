@@ -101,7 +101,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@color/line"/>
+            android:background="@color/backgroundColor"/>
         <RelativeLayout
             style="@style/WageRelativeLayoutStyle">
             <TextView
@@ -131,7 +131,7 @@
             android:layout_height="1dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@color/line"/>
+            android:background="@color/backgroundColor"/>
         <RelativeLayout
             android:layout_marginTop="20dp"
             style="@style/WageRelativeLayoutStyle">

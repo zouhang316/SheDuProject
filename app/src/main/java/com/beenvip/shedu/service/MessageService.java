@@ -70,14 +70,13 @@ public class MessageService extends Service {
             @Override
             public void onSuccess(LoginBean loginBean) {
                 LalaLog.i("login", loginBean.toString());
-                //Toast.makeText(TestHttp.this, "登录成功", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onFailed(LoginBean loginBean) {
-                //Toast.makeText(TestHttp.this, loginBean.getErrorInfo(), Toast.LENGTH_SHORT).show();
                 LalaLog.i("login", loginBean.toString());
             }
-        });
+        },true);
     }
 }

@@ -14,7 +14,7 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="158dp"
+        android:layout_height="200dp"
         android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/shape_loginbg"
@@ -39,6 +39,26 @@
             android:layout_marginRight="10dp"
             android:layout_gravity="center_vertical"
             android:background="@color/wihte"/>
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textCursorDrawable="@drawable/cursor_color"
+            style="@style/Text_Login_Style"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/wihte"
+            android:hint="请输入您的真实姓名"
+            android:background="@null"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/wihte"/>
+
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="match_parent"
