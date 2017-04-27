@@ -66,6 +66,7 @@
         <activity android:name=".publics.KefuActivity"/>
         <activity android:name=".fabaofang.activity.MoreActivity"/>
         <activity android:name=".fabaofang.activity.BanzuInfoActivity"/>
+        <activity android:name=".fabaofang.activity.SelectProject"/>
         <activity android:name=".fabaofang.activity.AddProjectActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
