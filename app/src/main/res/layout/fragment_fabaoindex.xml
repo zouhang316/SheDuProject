@@ -176,7 +176,7 @@
                         android:id="@+id/findbanzu"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:text="找班组" />
+                        android:text="招募工人" />
 
                     <RadioButton
                         style="@style/IndexRadioButtonStyle"
