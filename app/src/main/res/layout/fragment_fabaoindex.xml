@@ -35,9 +35,18 @@
 
         </android.support.v7.widget.Toolbar>
 
-        <TextView
-            style="@style/MarginLine"
-            android:layout_height="1px" />
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="1px"
+         android:orientation="horizontal"
+         android:background="@color/colorToolbar">
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="15dp"
+             android:background="@color/line"/>
+     </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/touming"

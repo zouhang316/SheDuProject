@@ -2,18 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.design.widget.AppBarLayout
+        style="@style/toolbar_padding"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/toolbar_padding">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="44dp"
+            android:background="@drawable/shape_gradient_toolbar"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:background="@drawable/shape_gradient_toolbar">
+            android:paddingRight="15dp">
 
             <TextView
                 android:id="@+id/title"
@@ -22,6 +23,7 @@
                 android:text="@string/app_name"
                 android:textColor="@color/wihte"
                 android:textSize="17sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -30,9 +32,19 @@
                 android:textColor="@color/wihte"
                 android:textSize="13sp" />
         </android.support.v7.widget.Toolbar>
-        <TextView
-            style="@style/MarginLine"
-            android:layout_height="1px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:orientation="horizontal"
+            android:background="@color/colorToolbar">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/line"/>
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/touming"
@@ -44,17 +56,17 @@
                 android:id="@+id/du"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
                 android:text="13°"
                 android:textColor="@color/wihte"
                 android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/city"
-                android:layout_alignTop="@+id/du"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/du"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
                 android:layout_toRightOf="@+id/du"
