@@ -181,7 +181,7 @@
                     <RadioButton
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:text="工人管理" />
+                        android:text="法律援助" />
 
                     <RadioButton
                         style="@style/IndexRadioButtonStyle"
