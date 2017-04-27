@@ -186,7 +186,7 @@
                     <RadioButton
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@mipmap/ic_launcher"
-                        android:text="工资托管" />
+                        android:text="行业资讯" />
                 </LinearLayout>
 
                 <LinearLayout
