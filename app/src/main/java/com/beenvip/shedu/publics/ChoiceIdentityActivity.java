@@ -109,6 +109,4 @@ public class ChoiceIdentityActivity extends BaseActivity {
                 break;
         }
     }
-
-
 }
