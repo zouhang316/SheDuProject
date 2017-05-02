@@ -1,4 +1,4 @@
-package com.beenvip.shedu.http;
+package com.beenvip.shedu.http.httpurlconnection;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -35,7 +35,7 @@ public class HttpHelper {
      * @param cls      需要解析的Bean
      * @param listener 回调监听
      */
-    public void asyncPostRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpListener listener,  boolean isLoading) {
+    public void asyncPostRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpCallBackListener listener, boolean isLoading) {
         LalaLog.d(LalaLog.SSX_TAG, "-----------------------------request start------------------------");
         LalaLog.d(LalaLog.SSX_TAG, "url:" + url);
         LalaLog.d(LalaLog.SSX_TAG, "requestBody:" + paramers.toString());
@@ -73,7 +73,7 @@ public class HttpHelper {
      * @param cls      需要解析的Bean
      * @param listener 回调监听
      */
-    public void asyncGetRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpListener listener,  boolean isLoading) {
+    public void asyncGetRequest(String url, final HashMap<String, String> paramers, final Class<? extends HttpBaseResponseBean> cls, final HttpCallBackListener listener, boolean isLoading) {
         LalaLog.d(LalaLog.SSX_TAG, "-----------------------------request start------------------------");
         LalaLog.d(LalaLog.SSX_TAG, "url:" + url);
         LalaLog.d(LalaLog.SSX_TAG, "requestBody:" + paramers.toString());

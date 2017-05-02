@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseActivity;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
 import com.beenvip.shedu.publics.bean.FenleiBean;
 import com.bigkoo.pickerview.TimePickerView;
 
@@ -73,7 +73,7 @@ public class AddProjectActivity extends BaseActivity implements View.OnClickList
     private void getData(){
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("type","1");
-        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpListener<FenleiBean>() {
+        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpCallBackListener<FenleiBean>() {
 
             @Override
             public void onSuccess(FenleiBean fenleiBean) {

@@ -6,8 +6,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.beenvip.shedu.http.HttpHelper;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
+import com.beenvip.shedu.http.httpurlconnection.HttpHelper;
 import com.beenvip.shedu.user.LoginActivity;
 import com.beenvip.shedu.user.bean.LoginBean;
 import com.beenvip.shedu.utils.LalaLog;
@@ -66,7 +66,7 @@ public class MessageService extends Service {
         map.put("username", "15576310006");
         map.put("password", "qwe123..aa");
         String url = "http://sp.beenvip.net/API/member/login.php?";
-        httpHelper.asyncGetRequest(url, map, LoginBean.class, new HttpListener<LoginBean>() {
+        httpHelper.asyncGetRequest(url, map, LoginBean.class, new HttpCallBackListener<LoginBean>() {
             @Override
             public void onSuccess(LoginBean loginBean) {
                 LalaLog.i("login", loginBean.toString());

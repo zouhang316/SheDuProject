@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beenvip.shedu.R;
-import com.beenvip.shedu.http.HttpHelper;
 
 /**
  * Created by ZH on 2017/3/8.
@@ -32,14 +31,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private FrameLayout mContentLayout;
     private LinearLayout mLinearLayout;
-    public HttpHelper httpHelper;
+//    public HttpHelper httpHelper;
 
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getDelegate().setContentView(R.layout.activity_base);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        httpHelper = new HttpHelper(this);
+//        httpHelper = new HttpHelper(this);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appbarlayout);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setNavigationIcon(R.mipmap.back);

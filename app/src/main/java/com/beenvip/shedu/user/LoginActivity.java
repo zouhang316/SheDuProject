@@ -8,15 +8,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.http.okhttp.HttpClient;
+import com.beenvip.shedu.http.okhttp.HttpListener;
+import com.beenvip.shedu.http.okhttp.HttpRequest;
 import com.beenvip.shedu.publics.FirstSelectIdentityActivity;
 import com.beenvip.shedu.user.bean.LoginBean;
 import com.beenvip.shedu.utils.CommUtils;
 import com.beenvip.shedu.utils.LalaLog;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ZH on 2017/3/23.
@@ -84,11 +88,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             showMessageDialog("提示", "密码不能为空");
             return;
         }
-        HashMap<String, String> paramers = new HashMap<>();
+        Map<String, Object> paramers = new HashMap<>();
         paramers.put("username", phone);
         paramers.put("password", pwd);
         String url = "http://sp.beenvip.net/API/member/login.php?";
-        httpHelper.asyncGetRequest(url, paramers, LoginBean.class, new HttpListener<LoginBean>() {
+        final HttpRequest httpRequest = new HttpRequest.Builder(url).addParam(paramers).build();
+        HttpClient.getInstance(this).gsonRequest(LoginBean.class, httpRequest, new HttpListener<LoginBean>() {
             @Override
             public void onSuccess(LoginBean loginBean) {
                 LalaLog.i("login", loginBean.toString());
@@ -98,10 +103,25 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             }
 
             @Override
-            public void onFailed(LoginBean loginBean) {
-                Toast.makeText(LoginActivity.this, loginBean.getErrorInfo(), Toast.LENGTH_SHORT).show();
-                LalaLog.i("login", loginBean.toString());
+            public void onError(VolleyError error) {
+
             }
-        },true);
+        }, this);
+
+//        httpHelper.asyncGetRequest(url, paramers, LoginBean.class, new HttpCallBackListener<LoginBean>() {
+//            @Override
+//            public void onSuccess(LoginBean loginBean) {
+//                LalaLog.i("login", loginBean.toString());
+//                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+//                Intent intent=new Intent(LoginActivity.this,FirstSelectIdentityActivity.class);
+//                startActivity(intent);
+//            }
+//
+//            @Override
+//            public void onFailed(LoginBean loginBean) {
+//                Toast.makeText(LoginActivity.this, loginBean.getErrorInfo(), Toast.LENGTH_SHORT).show();
+//                LalaLog.i("login", loginBean.toString());
+//            }
+//        },true);
     }
 }

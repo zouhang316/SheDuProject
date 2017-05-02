@@ -1,4 +1,4 @@
-package com.beenvip.shedu.http;
+package com.beenvip.shedu.http.httpurlconnection;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

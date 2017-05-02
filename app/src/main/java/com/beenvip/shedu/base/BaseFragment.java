@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.beenvip.shedu.http.HttpHelper;
+import com.beenvip.shedu.http.httpurlconnection.HttpHelper;
 
 /**
  * Created by ZH on 2017/3/8.

@@ -1,4 +1,4 @@
-package com.beenvip.shedu.http;
+package com.beenvip.shedu.http.httpurlconnection;
 
 /**
  * @author sxshi on 2017/4/13.
@@ -6,7 +6,7 @@ package com.beenvip.shedu.http;
  *         describe:Describe the function  of the current class
  */
 
-public interface HttpListener<T> {
+public interface HttpCallBackListener<T> {
     void onSuccess(T t);
     void onFailed(T t);
 }
