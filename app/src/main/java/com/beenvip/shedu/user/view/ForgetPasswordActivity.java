@@ -1,4 +1,4 @@
-package com.beenvip.shedu.user;
+package com.beenvip.shedu.user.view;
 
 import android.os.Bundle;
 import android.view.View;

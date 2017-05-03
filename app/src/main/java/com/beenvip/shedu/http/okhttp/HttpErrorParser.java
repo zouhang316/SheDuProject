@@ -20,8 +20,8 @@ public class HttpErrorParser extends BaseErrorInfo {
 
     public HttpErrorParser(VolleyError volleyError) {
         this.mVolleyError = volleyError;
-        this.errMessage = getErrorMsg();
-        this.responseCode = getStatusCode();
+        this.ErrorInfo = getErrorMsg();
+        this.ErrorCode = getStatusCode();
     }
 
     public String getErrorMsg() {

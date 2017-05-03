@@ -8,8 +8,8 @@ import android.support.annotation.Nullable;
 
 import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
 import com.beenvip.shedu.http.httpurlconnection.HttpHelper;
-import com.beenvip.shedu.user.LoginActivity;
-import com.beenvip.shedu.user.bean.LoginBean;
+import com.beenvip.shedu.user.view.LoginActivity;
+import com.beenvip.shedu.user.model.bean.LoginBean;
 import com.beenvip.shedu.utils.LalaLog;
 import com.beenvip.shedu.utils.PreferenceManager;
 

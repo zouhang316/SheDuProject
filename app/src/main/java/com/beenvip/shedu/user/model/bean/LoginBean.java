@@ -1,4 +1,4 @@
-package com.beenvip.shedu.user.bean;
+package com.beenvip.shedu.user.model.bean;
 
 import com.beenvip.shedu.base.HttpBaseResponseBean;
 

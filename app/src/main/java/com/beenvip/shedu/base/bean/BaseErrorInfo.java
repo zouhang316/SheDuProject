@@ -7,19 +7,19 @@ package com.beenvip.shedu.base.bean;
  */
 
 public class BaseErrorInfo {
-    public String responseCode;
-    public String errMessage;
+    public String ErrorCode;
+    public String ErrorInfo;
 
     public BaseErrorInfo() {
     }
 
-    public BaseErrorInfo(String responseCode, String errMessage) {
-        this.responseCode = responseCode;
-        this.errMessage = errMessage;
+    public BaseErrorInfo(String errorCode, String errorInfo) {
+        ErrorCode = errorCode;
+        ErrorInfo = errorInfo;
     }
 
     @Override
     public String toString() {
-        return "BaseErrorInfo{" + "responseCode='" + responseCode + '\'' + ", errMessage='" + errMessage + '\'' + '}';
+        return "BaseErrorInfo{" + "ErrorCode='" + ErrorCode + '\'' + ", ErrorInfo='" + ErrorInfo + '\'' + '}';
     }
 }
