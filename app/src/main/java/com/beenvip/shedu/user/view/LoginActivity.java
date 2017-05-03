@@ -1,4 +1,4 @@
-package com.beenvip.shedu.user;
+package com.beenvip.shedu.user.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,30 +6,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.base.bean.BaseErrorInfo;
 import com.beenvip.shedu.publics.FirstSelectIdentityActivity;
-import com.beenvip.shedu.user.bean.LoginBean;
+import com.beenvip.shedu.user.model.bean.LoginBean;
+import com.beenvip.shedu.user.presenter.LoginPresenter;
+import com.beenvip.shedu.user.presenter.LoginPresenterImpl;
 import com.beenvip.shedu.utils.CommUtils;
-import com.beenvip.shedu.utils.LalaLog;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ZH on 2017/3/23.
  * 497239511@qq.com
  */
 
-public class LoginActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements LoginView, View.OnClickListener {
     public static LoginActivity instance = null;
     private TextView bt_regiter;
     private TextView bt_forgetpwd;
     private EditText edit_phone;
     private EditText edit_pwd;
     private Button bt_login;
+    private LoginPresenter loginPresenter;
 
     @Override
     protected void initData() {
@@ -51,6 +53,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onActivityCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login);
+        loginPresenter = new LoginPresenterImpl(this, this);
         instance = this;
         setFitsSystemWindows(false);
         bt_regiter = findView(R.id.reg);
@@ -84,24 +87,31 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             showMessageDialog("提示", "密码不能为空");
             return;
         }
-        HashMap<String, String> paramers = new HashMap<>();
+        Map<String, Object> paramers = new HashMap<>();
         paramers.put("username", phone);
         paramers.put("password", pwd);
         String url = "http://sp.beenvip.net/API/member/login.php?";
-        httpHelper.asyncGetRequest(url, paramers, LoginBean.class, new HttpListener<LoginBean>() {
-            @Override
-            public void onSuccess(LoginBean loginBean) {
-                LalaLog.i("login", loginBean.toString());
-                Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(LoginActivity.this,FirstSelectIdentityActivity.class);
-                startActivity(intent);
-            }
+        loginPresenter.onLogin(url, paramers, LoginBean.class, true);
+    }
 
-            @Override
-            public void onFailed(LoginBean loginBean) {
-                Toast.makeText(LoginActivity.this, loginBean.getErrorInfo(), Toast.LENGTH_SHORT).show();
-                LalaLog.i("login", loginBean.toString());
-            }
-        },true);
+    @Override
+    public void showProgress() {
+        showLoading();
+    }
+
+    @Override
+    public void hideProgress() {
+        dismissLoading();
+    }
+
+    @Override
+    public void navigateToHome() {
+        Intent intent = new Intent(LoginActivity.this, FirstSelectIdentityActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void showErrorAlert(BaseErrorInfo baseErrorInfo) {
+        showToastMsg(baseErrorInfo.ErrorInfo);
     }
 }

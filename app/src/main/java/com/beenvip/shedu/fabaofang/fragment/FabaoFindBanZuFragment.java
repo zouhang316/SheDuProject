@@ -15,7 +15,7 @@ import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.fabaofang.activity.MoreActivity;
 import com.beenvip.shedu.fabaofang.adapter.FindBanzuAdapter;
 import com.beenvip.shedu.fabaofang.bean.BanzuListBean;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
 import com.beenvip.shedu.publics.bean.FenleiBean;
 import com.beenvip.shedu.utils.LalaLog;
 import com.beenvip.shedu.view.LoadMoreListView;
@@ -148,7 +148,7 @@ public class FabaoFindBanZuFragment extends BaseFragment implements View.OnClick
     public void getSortData(){
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("type","2");
-        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpListener<FenleiBean>() {
+        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpCallBackListener<FenleiBean>() {
             @Override
             public void onSuccess(FenleiBean fenleiBean) {
                 EventBus.getDefault().postSticky(fenleiBean);
@@ -163,7 +163,7 @@ public class FabaoFindBanZuFragment extends BaseFragment implements View.OnClick
     public void getBanzuList(){
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("mid","6");
-        httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, BanzuListBean.class, new HttpListener<BanzuListBean>() {
+        httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, BanzuListBean.class, new HttpCallBackListener<BanzuListBean>() {
             @Override
             public void onSuccess(BanzuListBean banzuListBean) {
                 adapter=new FindBanzuAdapter(getActivity(),banzuListBean.getData());

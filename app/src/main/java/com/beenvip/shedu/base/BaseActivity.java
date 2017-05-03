@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beenvip.shedu.R;
-import com.beenvip.shedu.http.HttpHelper;
+import com.beenvip.shedu.view.WaitDialog;
 
 /**
  * Created by ZH on 2017/3/8.
@@ -32,14 +32,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private FrameLayout mContentLayout;
     private LinearLayout mLinearLayout;
-    public HttpHelper httpHelper;
+    private WaitDialog mWaitDialog;
 
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getDelegate().setContentView(R.layout.activity_base);
+        mWaitDialog = new WaitDialog(this);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        httpHelper = new HttpHelper(this);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.appbarlayout);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setNavigationIcon(R.mipmap.back);
@@ -232,6 +232,18 @@ public abstract class BaseActivity extends AppCompatActivity {
             mLinearLayout.setFitsSystemWindows(b);
         }
 
+    }
+
+    public void showLoading() {
+        if (mWaitDialog.isShowing()) {
+            dismissLoading();
+        }
+        mWaitDialog.setCanceledOnTouchOutside(false);
+        mWaitDialog.show();
+    }
+
+    public void dismissLoading() {
+        if (mWaitDialog != null && mWaitDialog.isShowing()) mWaitDialog.dismiss();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.beenvip.shedu.http;
+package com.beenvip.shedu.http.httpurlconnection;
 
 /**
  * @author sxshi on 2017/4/13.

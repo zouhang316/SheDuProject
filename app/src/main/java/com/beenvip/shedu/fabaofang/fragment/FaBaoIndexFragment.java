@@ -21,7 +21,7 @@ import com.beenvip.shedu.fabaofang.adapter.GridViewAdapter;
 import com.beenvip.shedu.fabaofang.bean.BanzuBean;
 import com.beenvip.shedu.fabaofang.bean.BanzuListBean;
 import com.beenvip.shedu.holder.LocalImageHolderView;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
 import com.beenvip.shedu.utils.LalaLog;
 import com.beenvip.shedu.view.MyGridView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -105,7 +105,7 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     public void getBanzuFenlei(){
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("sort","2");
-        httpHelper.asyncGetRequest(ApiContacts.FINDBANZU_BANZUFENLEI, paramers, BanzuBean.class, new HttpListener<BanzuBean>() {
+        httpHelper.asyncGetRequest(ApiContacts.FINDBANZU_BANZUFENLEI, paramers, BanzuBean.class, new HttpCallBackListener<BanzuBean>() {
 
             @Override
             public void onSuccess(BanzuBean banzuBean) {
@@ -124,7 +124,7 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     public void getRecommend(){
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("mid","6");
-        httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, BanzuListBean.class, new HttpListener<BanzuListBean>() {
+        httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, BanzuListBean.class, new HttpCallBackListener<BanzuListBean>() {
             @Override
             public void onSuccess(BanzuListBean banzuListBean) {
                 banzuAdapter=new FindBanzuAdapter(getActivity(),banzuListBean.getData());
