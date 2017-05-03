@@ -122,6 +122,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
+                    android:drawableLeft="@drawable/ic_ziliao"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
                     android:textColor="@color/minefontcolor"
                     android:text="我的资料"/>
                 <TextView
@@ -147,6 +150,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
+                    android:drawableLeft="@drawable/ic_yanzhen"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
                     android:textColor="@color/minefontcolor"
                     android:text="实名认证"
                     android:id="@+id/textView2" />
@@ -177,6 +183,9 @@
                     android:textSize="12sp"
                     android:textColor="@color/minefontcolor"
                     android:text="联系客服"
+                    android:drawableLeft="@drawable/ic_kefu"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
                     android:layout_alignBaseline="@+id/textView"
                     android:layout_alignBottom="@+id/textView"
                     android:layout_alignParentLeft="true"
@@ -203,6 +212,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
+                    android:drawableLeft="@drawable/ic_qiehuan"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
                     android:textColor="@color/minefontcolor"
                     android:text="切换身份"/>
                 <TextView
@@ -230,6 +242,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="设置"
+                    android:drawableLeft="@drawable/ic_setting"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
                     android:textColor="@color/minefontcolor"
                     android:textSize="12sp"
                     android:layout_alignTop="@+id/textView6"

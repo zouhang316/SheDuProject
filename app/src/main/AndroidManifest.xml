@@ -69,6 +69,10 @@
         <activity android:name=".fabaofang.activity.SelectProject"/>
         <activity android:name=".fabaofang.activity.AddProjectActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".fabaofang.activity.ZhaoMuGongrenActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".fabaofang.activity.ZhaoMuBanzuActvity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
     </application>
 
 </manifest>

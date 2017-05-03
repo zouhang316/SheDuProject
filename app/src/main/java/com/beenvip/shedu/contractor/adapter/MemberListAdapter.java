@@ -59,10 +59,10 @@ public class MemberListAdapter extends BaseListViewAdapter<MyContacts> {
             @Override
             public void onClick(View v) {
                 //拨打电话
-                getCallPhonePermission(mContext);
-                if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
+//                getCallPhonePermission(mContext);
+//                if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+//                    return;
+//                }
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 Uri data = Uri.parse("tel:" + myContacts.getPhoneNumber());
                 intent.setData(data);
