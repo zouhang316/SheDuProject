@@ -12,10 +12,9 @@ import com.beenvip.shedu.R;
 import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.adapter.ListViewAdapter;
-import com.beenvip.shedu.event.ShowFindBanzu;
-import com.beenvip.shedu.fabaofang.activity.AddProjectActivity;
 import com.beenvip.shedu.fabaofang.activity.RecruitmentActivity;
 import com.beenvip.shedu.fabaofang.activity.ReleaseDemandActivity;
+import com.beenvip.shedu.fabaofang.activity.SelectProject;
 import com.beenvip.shedu.fabaofang.adapter.FindBanzuAdapter;
 import com.beenvip.shedu.fabaofang.adapter.GridViewAdapter;
 import com.beenvip.shedu.fabaofang.bean.BanzuBean;
@@ -26,8 +25,6 @@ import com.beenvip.shedu.utils.LalaLog;
 import com.beenvip.shedu.view.MyGridView;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,7 +39,6 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     private ConvenientBanner banner;
     private ArrayList<Integer> imageList;
     private RadioButton fabao;
-    private RadioButton findBanzu;
     private TextView emptyRecommend;
     private MyGridView mGridView;
     private GridViewAdapter adapter;
@@ -52,6 +48,7 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     private RadioButton zhaoGong;
     private RadioButton releaseDemand;
     private RadioButton zhaoBanzu;
+    private RadioButton zhaoMuGongren;
     private List<BanzuBean.DataBean> beanList;
 
     @Override
@@ -68,13 +65,13 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     @Override
     public void initView(View view, Bundle savedInstanceState) {
         banner= (ConvenientBanner) view.findViewById(R.id.banner);
-        findBanzu= (RadioButton) view.findViewById(R.id.findbanzu);
         listView= (ListView) view.findViewById(R.id.listview);
         mGridView = (MyGridView) view.findViewById(R.id.gridview);
         emptyRecommend= (TextView) view.findViewById(R.id.empty_recommend);
         zhaoGong= (RadioButton) view.findViewById(R.id.zhaogong);
         releaseDemand= (RadioButton) view.findViewById(R.id.releasedemand);
         zhaoBanzu= (RadioButton) view.findViewById(R.id.zhaobanzu);
+        zhaoMuGongren= (RadioButton) view.findViewById(R.id.zhaomugongren);
         listView.setFocusable(false);
         initListener();
         initBanner();
@@ -161,10 +158,10 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
         },imageList);
     }
     private void initListener(){
-        findBanzu.setOnClickListener(this);
         releaseDemand.setOnClickListener(this);
         zhaoGong.setOnClickListener(this);
         zhaoBanzu.setOnClickListener(this);
+        zhaoMuGongren.setOnClickListener(this);
     }
 
 
@@ -172,9 +169,6 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     public void onClick(View v) {
         int id=v.getId();
         switch (id){
-            case R.id.findbanzu:
-                EventBus.getDefault().post(new ShowFindBanzu());
-                break;
             case R.id.zhaogong:
                 startActivity(new Intent(getActivity(), RecruitmentActivity.class));
                 break;
@@ -182,7 +176,10 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
                 startActivity(new Intent(getActivity(), ReleaseDemandActivity.class));
                 break;
             case R.id.zhaobanzu:
-                startActivity(new Intent(getActivity(), AddProjectActivity.class));
+                startActivity(new Intent(getActivity(), SelectProject.class).putExtra("action",0));
+                break;
+            case R.id.zhaomugongren:
+                startActivity(new Intent(getActivity(), SelectProject.class).putExtra("action",1));
                 break;
         }
     }

@@ -13,16 +13,11 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.beenvip.shedu.contractor.MessageFragment;
-import com.beenvip.shedu.event.ShowFindBanzu;
 import com.beenvip.shedu.fabaofang.fragment.FaBaoIndexFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoFindBanZuFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoMineFragment;
 import com.beenvip.shedu.fabaofang.fragment.FindgysFragment;
 import com.beenvip.shedu.utils.ExitAppliation;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -59,7 +54,6 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         instance=this;
         setContentView(R.layout.activity_mianfabao);
-        EventBus.getDefault().register(this);
         rd_index= (RadioButton) findViewById(R.id.rb_index);
         rd_findcbf= (RadioButton) findViewById(R.id.rb_findcbx);
         rd_findgys= (RadioButton) findViewById(R.id.rb_findgys);
@@ -224,14 +218,10 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
             window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void showFindBanzu(ShowFindBanzu banzu){
-        showContentFragment(FINDCBS_FLAG,null);
-    }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 }

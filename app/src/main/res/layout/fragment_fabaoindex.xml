@@ -173,7 +173,7 @@
                         android:text="招募班组" />
 
                     <RadioButton
-                        android:id="@+id/findbanzu"
+                        android:id="@+id/zhaomugongren"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@drawable/ic_gongren"
                         android:text="招募工人" />
