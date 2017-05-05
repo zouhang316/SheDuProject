@@ -17,6 +17,7 @@ import com.beenvip.shedu.fabaofang.fragment.FaBaoIndexFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoFindBanZuFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoMineFragment;
 import com.beenvip.shedu.fabaofang.fragment.FindgysFragment;
+import com.beenvip.shedu.fabaofang.view.FindeBanzuFragment_mvp;
 import com.beenvip.shedu.utils.ExitAppliation;
 
 import java.util.Timer;
@@ -40,6 +41,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
     private FabaoFindBanZuFragment findBanZuFragment;
     private FindgysFragment findgysFragment;
     private FabaoMineFragment fabaoMineFragment;
+    private FindeBanzuFragment_mvp fragmentMvp;
 
     private RadioButton rd_index;
     private RadioButton rd_message;
@@ -85,12 +87,12 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
                 break;
             case FINDCBS_FLAG:
                 rd_findcbf.setChecked(true);
-                if (findBanZuFragment == null) {
-                    findBanZuFragment = new FabaoFindBanZuFragment();
-                    findBanZuFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, findBanZuFragment);
+                if (fragmentMvp == null) {
+                    fragmentMvp = new FindeBanzuFragment_mvp();
+                    fragmentMvp.setArguments(bundle);
+                    ft.add(R.id.fl_content, fragmentMvp);
                 } else {
-                    ft.show(findBanZuFragment);
+                    ft.show(fragmentMvp);
                 }
                 break;
             case FINDGYS_FLAG:
@@ -133,8 +135,8 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         if (indexFragment != null) {
             ft.hide(indexFragment);
         }
-        if (findBanZuFragment != null) {
-            ft.hide(findBanZuFragment);
+        if (fragmentMvp != null) {
+            ft.hide(fragmentMvp);
         }
         if (findgysFragment != null) {
             ft.hide(findgysFragment);

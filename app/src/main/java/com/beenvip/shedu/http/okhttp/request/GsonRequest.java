@@ -6,6 +6,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.beenvip.shedu.http.okhttp.HttpListener;
 import com.beenvip.shedu.http.okhttp.HttpRequest;
+import com.beenvip.shedu.utils.LalaLog;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 /**
@@ -36,6 +37,7 @@ public class GsonRequest<T> extends RequestWrapper<T> {
     @Override
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
         String result = getResponseString(response);
+        LalaLog.json("JSON", result);
         if (result.equals(PARSEERROR)) {
             return Response.error(new ParseError());
         }

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.beenvip.shedu.http.httpurlconnection.HttpHelper;
+import com.beenvip.shedu.view.WaitDialog;
 
 /**
  * Created by ZH on 2017/3/8.
@@ -17,12 +18,14 @@ import com.beenvip.shedu.http.httpurlconnection.HttpHelper;
 
 public  abstract class BaseFragment extends Fragment {
     public HttpHelper httpHelper;
+    private WaitDialog mWaitDialog;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         httpHelper=new HttpHelper(getActivity());
+        mWaitDialog = new WaitDialog(getActivity());
         initData(savedInstanceState);
     }
 
@@ -60,6 +63,16 @@ public  abstract class BaseFragment extends Fragment {
      * @return
      */
     public abstract int getFragmentLayoutId();
+    public void showLoading() {
+        if (mWaitDialog.isShowing()) {
+            dismissLoading();
+        }
+        mWaitDialog.setCanceledOnTouchOutside(false);
+        mWaitDialog.show();
+    }
+    public void dismissLoading() {
+        if (mWaitDialog != null && mWaitDialog.isShowing()) mWaitDialog.dismiss();
+    }
 
 
 }

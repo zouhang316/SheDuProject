@@ -11,7 +11,7 @@ import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.fabaofang.adapter.ProjectAdapter;
 import com.beenvip.shedu.fabaofang.bean.ProjectBean;
-import com.beenvip.shedu.http.HttpListener;
+import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
 import com.beenvip.shedu.utils.LalaLog;
 
 import java.util.HashMap;
@@ -70,7 +70,7 @@ public class SelectProject extends BaseActivity {
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("mid","5");
         paramers.put("which"," AND uid=3");
-        httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, ProjectBean.class, new HttpListener<ProjectBean>() {
+        httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, ProjectBean.class, new HttpCallBackListener<ProjectBean>() {
             @Override
             public void onSuccess(ProjectBean projectBean) {
                 LalaLog.d("zzz",projectBean.toString());
@@ -83,6 +83,7 @@ public class SelectProject extends BaseActivity {
             public void onFailed(ProjectBean projectBean) {
 
             }
+
 
         },false);
     }

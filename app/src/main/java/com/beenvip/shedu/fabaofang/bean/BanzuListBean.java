@@ -30,6 +30,28 @@ public class BanzuListBean extends HttpBaseResponseBean implements Parcelable {
     }
 
     public static class DataBean implements Parcelable {
+        @Override
+        public String toString() {
+            return "DataBean{" +
+                    "bid='" + bid + '\'' +
+                    ", bName='" + bName + '\'' +
+                    ", bType='" + bType + '\'' +
+                    ", bTypename='" + bTypename + '\'' +
+                    ", bCost='" + bCost + '\'' +
+                    ", bNumer='" + bNumer + '\'' +
+                    ", bContact='" + bContact + '\'' +
+                    ", bPhone='" + bPhone + '\'' +
+                    ", bCity='" + bCity + '\'' +
+                    ", bCityname='" + bCityname + '\'' +
+                    ", posttime='" + posttime + '\'' +
+                    ", uid='" + uid + '\'' +
+                    ", pid='" + pid + '\'' +
+                    ", bworktime='" + bworktime + '\'' +
+                    ", bworkdesc='" + bworkdesc + '\'' +
+                    ", picurl='" + picurl + '\'' +
+                    '}';
+        }
+
         /**
          * bid : 2
          * bName : 周冶家班组
@@ -282,4 +304,11 @@ public class BanzuListBean extends HttpBaseResponseBean implements Parcelable {
             return new BanzuListBean[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "BanzuListBean{" +
+                "data=" + data +
+                '}';
+    }
 }

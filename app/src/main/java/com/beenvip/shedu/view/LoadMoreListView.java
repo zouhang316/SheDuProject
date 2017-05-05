@@ -50,7 +50,9 @@ public class LoadMoreListView extends ListView implements AbsListView.OnScrollLi
                 if (!isLoding){
                     isLoding=true;
                     //foot.findViewById(R.id.footlayout).setVisibility(VISIBLE);
-                    listener.onLoad();
+                    if (listener!=null){
+                        listener.onLoad();
+                    }
                 }
         }
 

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.beenvip.shedu.R;
+import com.beenvip.shedu.http.httpurlconnection.HttpHelper;
 import com.beenvip.shedu.view.WaitDialog;
 
 /**
@@ -33,10 +34,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     private FrameLayout mContentLayout;
     private LinearLayout mLinearLayout;
     private WaitDialog mWaitDialog;
+    public HttpHelper httpHelper;
 
     @Override
     protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        httpHelper=new HttpHelper(this);
         getDelegate().setContentView(R.layout.activity_base);
         mWaitDialog = new WaitDialog(this);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
