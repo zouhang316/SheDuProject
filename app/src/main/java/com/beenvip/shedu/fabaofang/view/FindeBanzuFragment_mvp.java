@@ -1,14 +1,17 @@
 package com.beenvip.shedu.fabaofang.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.base.bean.BaseErrorInfo;
+import com.beenvip.shedu.fabaofang.activity.BanzuInfoActivity;
 import com.beenvip.shedu.fabaofang.adapter.FindBanzuAdapter;
 import com.beenvip.shedu.fabaofang.bean.BanzuListBean;
 import com.beenvip.shedu.fabaofang.presenter.FindBanzuPresenter;
@@ -60,9 +63,15 @@ public class FindeBanzuFragment_mvp extends BaseFragment implements FindBanzuVie
 
 
     @Override
-    public void showListview(BanzuListBean listBean) {
+    public void showListview(final BanzuListBean listBean) {
         FindBanzuAdapter adapter=new FindBanzuAdapter(getActivity(),listBean.getData());
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(getActivity(), BanzuInfoActivity.class).putExtra("data",listBean.getData().get(position)));
+            }
+        });
     }
 
     @Override

@@ -10,11 +10,12 @@ import android.widget.ScrollView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.activity.PersonInforActivity;
-import com.beenvip.shedu.contractor.activity.SMActivity;
+import com.beenvip.shedu.publics.activity.SMActivity;
 import com.beenvip.shedu.fabaofang.activity.FabaoActivity;
 import com.beenvip.shedu.fabaofang.activity.RecruitmentActivity;
-import com.beenvip.shedu.publics.ChoiceIdentityActivity;
-import com.beenvip.shedu.publics.KefuActivity;
+import com.beenvip.shedu.publics.activity.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.activity.KefuActivity;
+import com.beenvip.shedu.publics.activity.SettingActivity;
 
 /**
  * Created by ZH on 2017/3/21.
@@ -26,6 +27,7 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
     private RelativeLayout userInfo;
     private RelativeLayout smyz;
     private RelativeLayout kefu;
+    private RelativeLayout setting;
     private ScrollView scrollView;
     private Button fabao;
     private Button zhaogong;
@@ -42,6 +44,7 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
         fabao= (Button) view.findViewById(R.id.fabao);
         zhaogong= (Button) view.findViewById(R.id.zhaogong);
         kefu= (RelativeLayout) view.findViewById(R.id.kefu);
+        setting= (RelativeLayout) view.findViewById(R.id.setting);
         initListener();
 
 
@@ -74,6 +77,9 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
             case R.id.kefu:
                 startActivity(new Intent(getActivity(), KefuActivity.class));
                 break;
+            case R.id.setting:
+                startActivity(new Intent(getActivity(), SettingActivity.class));
+                break;
         }
     }
     private void initListener(){
@@ -83,6 +89,7 @@ public class FabaoMineFragment extends BaseFragment implements View.OnClickListe
         fabao.setOnClickListener(this);
         zhaogong.setOnClickListener(this);
         kefu.setOnClickListener(this);
+        setting.setOnClickListener(this);
     }
 
 

@@ -267,18 +267,26 @@
         <TextView
             style="@style/MarginLine"/>
         <RelativeLayout
-            style="@style/WageRelativeLayoutStyle">
+            style="@style/WageRelativeLayoutStyle"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
             <TextView
                 style="@style/WageFontStyle"
-                android:text="联系人"/>
-
-            <EditText
-                style="@style/ProjectDetailsTextFont"
+                android:text="项目介绍"/>
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:gravity="right"
-                android:hint="请输入联系人姓名"
-                android:textSize="14sp"/>
+                android:gravity="right">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:textSize="14sp"
+                    android:hint="请输入项目介绍"/>
+            </RelativeLayout>
         </RelativeLayout>
         <TextView
             style="@style/MarginLine"/>

@@ -9,9 +9,10 @@ import android.widget.ScrollView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.activity.PersonInforActivity;
-import com.beenvip.shedu.contractor.activity.SMActivity;
-import com.beenvip.shedu.publics.ChoiceIdentityActivity;
-import com.beenvip.shedu.publics.KefuActivity;
+import com.beenvip.shedu.publics.activity.SMActivity;
+import com.beenvip.shedu.publics.activity.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.activity.KefuActivity;
+import com.beenvip.shedu.publics.activity.SettingActivity;
 
 /**
  * Created by ZH on 2017/3/21.
@@ -23,6 +24,7 @@ public class SupplierMineFragment extends BaseFragment implements View.OnClickLi
     private RelativeLayout userInfo;
     private RelativeLayout smyz;
     private RelativeLayout kefu;
+    private RelativeLayout setting;
     private ScrollView scrollView;
     @Override
     public void initData(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class SupplierMineFragment extends BaseFragment implements View.OnClickLi
         userInfo= (RelativeLayout) view.findViewById(R.id.contractor_userinfo);
         smyz= (RelativeLayout) view.findViewById(R.id.smyz);
         kefu= (RelativeLayout) view.findViewById(R.id.kefu);
+        setting= (RelativeLayout) view.findViewById(R.id.setting);
         initListener();
     }
 
@@ -59,6 +62,9 @@ public class SupplierMineFragment extends BaseFragment implements View.OnClickLi
             case R.id.kefu:
                 startActivity(new Intent(getActivity(), KefuActivity.class));
                 break;
+            case R.id.setting:
+                startActivity(new Intent(getActivity(), SettingActivity.class));
+                break;
         }
     }
     private void initListener(){
@@ -66,6 +72,7 @@ public class SupplierMineFragment extends BaseFragment implements View.OnClickLi
         userInfo.setOnClickListener(this);
         smyz.setOnClickListener(this);
         kefu.setOnClickListener(this);
+        setting.setOnClickListener(this);
     }
 
 

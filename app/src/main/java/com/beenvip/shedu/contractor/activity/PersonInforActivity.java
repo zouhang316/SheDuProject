@@ -8,8 +8,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.beenvip.shedu.R;
+import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.fabaofang.activity.MoreActivity;
+import com.beenvip.shedu.http.httpurlconnection.HttpCallBackListener;
 import com.beenvip.shedu.publics.bean.FenleiBean;
 import com.bigkoo.pickerview.OptionsPickerView;
 
@@ -131,16 +133,16 @@ public class PersonInforActivity extends BaseActivity implements View.OnClickLis
     private void getGzhongData(){
         HashMap<String,String> paramers=new HashMap<>();
         paramers.put("type","3");
-//        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpCallBackListener<FenleiBean>() {
-//            @Override
-//            public void onSuccess(FenleiBean fenleiBean) {
-//                fenleiBeanData=fenleiBean;
-//            }
-//
-//            @Override
-//            public void onFailed(FenleiBean fenleiBean) {
-//            }
-//        },true);
+        httpHelper.asyncGetRequest(ApiContacts.INDEX_GETSORT, paramers, FenleiBean.class, new HttpCallBackListener<FenleiBean>() {
+            @Override
+            public void onSuccess(FenleiBean fenleiBean) {
+                fenleiBeanData=fenleiBean;
+            }
+
+            @Override
+            public void onFailed(FenleiBean fenleiBean) {
+            }
+        },true);
     }
     private void getShenData(){
         HashMap<String,String> paramers=new HashMap<>();

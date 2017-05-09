@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/item_head"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/test2"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_alignParentTop="true"
+                android:textSize="15sp"
+                android:ellipsize="end"
+                android:textColor="@color/defultTextColor"
+                android:text="工地受伤求告无门 法律援助帮他解烦忧"/>
+            <TextView
+                android:id="@+id/item_title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:textSize="13sp"
+                android:ellipsize="end"
+                android:text="工地受伤求告无门 法律援助帮他解烦忧工地受伤求告无门 法律援助帮他解烦忧"
+                android:layout_marginTop="35dp"/>
+
+    </RelativeLayout>
+
+    </LinearLayout>

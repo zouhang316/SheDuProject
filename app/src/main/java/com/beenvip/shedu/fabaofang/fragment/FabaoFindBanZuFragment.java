@@ -116,7 +116,6 @@ public class FabaoFindBanZuFragment extends BaseFragment implements View.OnClick
                 showPickView();
                 break;
         }
-
     }
     private void loadMore(){
         if (dataList.size()>20){
@@ -185,7 +184,6 @@ public class FabaoFindBanZuFragment extends BaseFragment implements View.OnClick
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
                 showToast(dates.get(options1));
-
             }
         }).build();
         pickerView.setPicker(dates);

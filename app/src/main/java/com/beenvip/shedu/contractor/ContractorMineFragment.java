@@ -10,10 +10,11 @@ import android.widget.ScrollView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseFragment;
 import com.beenvip.shedu.contractor.activity.PersonInforActivity;
-import com.beenvip.shedu.contractor.activity.SMActivity;
+import com.beenvip.shedu.publics.activity.SMActivity;
 import com.beenvip.shedu.event.ShowChance;
-import com.beenvip.shedu.publics.ChoiceIdentityActivity;
-import com.beenvip.shedu.publics.KefuActivity;
+import com.beenvip.shedu.publics.activity.ChoiceIdentityActivity;
+import com.beenvip.shedu.publics.activity.KefuActivity;
+import com.beenvip.shedu.publics.activity.SettingActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -25,6 +26,7 @@ import org.greenrobot.eventbus.EventBus;
 public class ContractorMineFragment extends BaseFragment implements View.OnClickListener{
     private RelativeLayout switchidentity;
     private RelativeLayout userInfo;
+    private RelativeLayout setting;
     private RelativeLayout smyz;
     private RelativeLayout kefu;
     private ScrollView scrollView;
@@ -41,6 +43,7 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
         kefu= (RelativeLayout) view.findViewById(R.id.kefu);
         smyz= (RelativeLayout) view.findViewById(R.id.smyz);
         findJob= (Button) view.findViewById(R.id.mine_findjob);
+        setting= (RelativeLayout) view.findViewById(R.id.setting);
         initListener();
 
 
@@ -70,6 +73,9 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
             case R.id.kefu:
                 startActivity(new Intent(getActivity(), KefuActivity.class));
                 break;
+            case R.id.setting:
+                startActivity(new Intent(getActivity(), SettingActivity.class));
+                break;
         }
     }
     private void initListener(){
@@ -78,6 +84,7 @@ public class ContractorMineFragment extends BaseFragment implements View.OnClick
         smyz.setOnClickListener(this);
         findJob.setOnClickListener(this);
         kefu.setOnClickListener(this);
+        setting.setOnClickListener(this);
     }
 
 

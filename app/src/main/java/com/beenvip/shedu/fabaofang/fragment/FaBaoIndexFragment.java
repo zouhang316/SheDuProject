@@ -11,9 +11,8 @@ import android.widget.TextView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.api.ApiContacts;
 import com.beenvip.shedu.base.BaseFragment;
-import com.beenvip.shedu.contractor.adapter.ListViewAdapter;
+import com.beenvip.shedu.fabaofang.activity.BanzuInfoActivity;
 import com.beenvip.shedu.fabaofang.activity.RecruitmentActivity;
-import com.beenvip.shedu.fabaofang.activity.ReleaseDemandActivity;
 import com.beenvip.shedu.fabaofang.activity.SelectProject;
 import com.beenvip.shedu.fabaofang.adapter.FindBanzuAdapter;
 import com.beenvip.shedu.fabaofang.adapter.GridViewAdapter;
@@ -43,7 +42,6 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
     private MyGridView mGridView;
     private GridViewAdapter adapter;
     private FindBanzuAdapter banzuAdapter;
-    private List<String> datas;
     private ListView listView;
     private RadioButton zhaoGong;
     private RadioButton releaseDemand;
@@ -53,12 +51,6 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        HashMap<String,String> paramers=new HashMap<>();
-        paramers.put("type","1");
-        datas=new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
-            datas.add("");
-        }
         getRecommend();
     }
 
@@ -68,11 +60,11 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
         listView= (ListView) view.findViewById(R.id.listview);
         mGridView = (MyGridView) view.findViewById(R.id.gridview);
         emptyRecommend= (TextView) view.findViewById(R.id.empty_recommend);
-        zhaoGong= (RadioButton) view.findViewById(R.id.zhaogong);
-        releaseDemand= (RadioButton) view.findViewById(R.id.releasedemand);
+//        zhaoGong= (RadioButton) view.findViewById(R.id.zhaogong);
+//        releaseDemand= (RadioButton) view.findViewById(R.id.releasedemand);
         zhaoBanzu= (RadioButton) view.findViewById(R.id.zhaobanzu);
         zhaoMuGongren= (RadioButton) view.findViewById(R.id.zhaomugongren);
-        listView.setFocusable(false);
+        //listView.setFocusable(false);
         initListener();
         initBanner();
 
@@ -82,13 +74,11 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position==beanList.size()){
-
+                    //更多
                 }
 
             }
         });
-        ListViewAdapter adapter=new ListViewAdapter(getActivity(),datas);
-        //listView.setAdapter(adapter);
 
     }
 
@@ -123,9 +113,15 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
         paramers.put("mid","6");
         httpHelper.asyncGetRequest(ApiContacts.LIST, paramers, BanzuListBean.class, new HttpCallBackListener<BanzuListBean>() {
             @Override
-            public void onSuccess(BanzuListBean banzuListBean) {
+            public void onSuccess(final BanzuListBean banzuListBean) {
                 banzuAdapter=new FindBanzuAdapter(getActivity(),banzuListBean.getData());
                 listView.setAdapter(banzuAdapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        startActivity(new Intent(getActivity(), BanzuInfoActivity.class).putExtra("data",banzuListBean.getData().get(position)));
+                    }
+                });
             }
 
             @Override
@@ -158,8 +154,8 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
         },imageList);
     }
     private void initListener(){
-        releaseDemand.setOnClickListener(this);
-        zhaoGong.setOnClickListener(this);
+        //releaseDemand.setOnClickListener(this);
+        //zhaoGong.setOnClickListener(this);
         zhaoBanzu.setOnClickListener(this);
         zhaoMuGongren.setOnClickListener(this);
     }
@@ -172,9 +168,9 @@ public class FaBaoIndexFragment extends BaseFragment implements View.OnClickList
             case R.id.zhaogong:
                 startActivity(new Intent(getActivity(), RecruitmentActivity.class));
                 break;
-            case R.id.releasedemand:
-                startActivity(new Intent(getActivity(), ReleaseDemandActivity.class));
-                break;
+//            case R.id.releasedemand: 发布需求
+//                startActivity(new Intent(getActivity(), ReleaseDemandActivity.class));
+//                break;
             case R.id.zhaobanzu:
                 startActivity(new Intent(getActivity(), SelectProject.class).putExtra("action",0));
                 break;

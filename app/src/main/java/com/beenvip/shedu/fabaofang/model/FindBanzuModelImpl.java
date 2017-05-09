@@ -55,12 +55,11 @@ public class FindBanzuModelImpl implements BaseModel<BanzuListBean> ,FindBanzuMo
     @Override
     public void getMyData(OnMyDataListener listener) {
         List<String> stringList=new ArrayList<>();
-        stringList.add("周一");
-        stringList.add("周二");
-        stringList.add("周三");
-        stringList.add("周四");
-        stringList.add("周五");
-        stringList.add("周六");
+        stringList.add("一年以上");
+        stringList.add("二年以上");
+        stringList.add("三年以上");
+        stringList.add("四年以上");
+        stringList.add("五年以上");
         listener.onSuccess(stringList);
     }
 }

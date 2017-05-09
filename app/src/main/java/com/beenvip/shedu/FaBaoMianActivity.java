@@ -16,7 +16,7 @@ import com.beenvip.shedu.contractor.MessageFragment;
 import com.beenvip.shedu.fabaofang.fragment.FaBaoIndexFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoFindBanZuFragment;
 import com.beenvip.shedu.fabaofang.fragment.FabaoMineFragment;
-import com.beenvip.shedu.fabaofang.fragment.FindgysFragment;
+import com.beenvip.shedu.fabaofang.fragment.MyProjectFragment;
 import com.beenvip.shedu.fabaofang.view.FindeBanzuFragment_mvp;
 import com.beenvip.shedu.utils.ExitAppliation;
 
@@ -32,21 +32,21 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
     private FragmentTransaction ft;
     protected final int INDEX_FLAG = 0x100;
     protected final int FINDCBS_FLAG = 0x101;
-    protected final int FINDGYS_FLAG = 0x104;
+    protected final int PROJECT_FLAG = 0x104;
     protected final int MESSAGE_FLAG = 0x102;
     protected final int MINE_FLAG = 0x103;
 
     private FaBaoIndexFragment indexFragment;
     private MessageFragment messageFragment;
     private FabaoFindBanZuFragment findBanZuFragment;
-    private FindgysFragment findgysFragment;
     private FabaoMineFragment fabaoMineFragment;
     private FindeBanzuFragment_mvp fragmentMvp;
+    private MyProjectFragment projectFragment;
 
     private RadioButton rd_index;
     private RadioButton rd_message;
     private RadioButton rd_findcbf;
-    private RadioButton rd_findgys;
+    private RadioButton rd_myproject;
     private RadioButton rd_mine;
     public static FaBaoMianActivity instance=null;
 
@@ -58,7 +58,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_mianfabao);
         rd_index= (RadioButton) findViewById(R.id.rb_index);
         rd_findcbf= (RadioButton) findViewById(R.id.rb_findcbx);
-        rd_findgys= (RadioButton) findViewById(R.id.rb_findgys);
+        rd_myproject = (RadioButton) findViewById(R.id.rb_myproject);
         rd_message= (RadioButton) findViewById(R.id.rb_message);
         rd_mine= (RadioButton) findViewById(R.id.rb_mine);
         initListener();
@@ -95,14 +95,14 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
                     ft.show(fragmentMvp);
                 }
                 break;
-            case FINDGYS_FLAG:
-                rd_findgys.setChecked(true);
-                if (findgysFragment == null) {
-                    findgysFragment = new FindgysFragment();
-                    findgysFragment.setArguments(bundle);
-                    ft.add(R.id.fl_content, findgysFragment);
+            case PROJECT_FLAG:
+                rd_myproject.setChecked(true);
+                if (projectFragment == null) {
+                    projectFragment = new MyProjectFragment();
+                    projectFragment.setArguments(bundle);
+                    ft.add(R.id.fl_content, projectFragment);
                 } else {
-                    ft.show(findgysFragment);
+                    ft.show(projectFragment);
                 }
                 break;
             case MESSAGE_FLAG:
@@ -138,8 +138,8 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
         if (fragmentMvp != null) {
             ft.hide(fragmentMvp);
         }
-        if (findgysFragment != null) {
-            ft.hide(findgysFragment);
+        if (projectFragment != null) {
+            ft.hide(projectFragment);
         }
         if (messageFragment != null) {
             ft.hide(messageFragment);
@@ -152,7 +152,7 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
     private void initListener(){
         rd_index.setOnClickListener(this);
         rd_findcbf.setOnClickListener(this);
-        rd_findgys.setOnClickListener(this);
+        rd_myproject.setOnClickListener(this);
         rd_message.setOnClickListener(this);
         rd_mine.setOnClickListener(this);
     }
@@ -169,8 +169,8 @@ public class FaBaoMianActivity extends AppCompatActivity implements View.OnClick
             showContentFragment(MESSAGE_FLAG, bundle);
         } else if (R.id.rb_mine == viewId) {
             showContentFragment(MINE_FLAG, bundle);
-        }else if (R.id.rb_findgys==viewId){
-            showContentFragment(FINDGYS_FLAG, bundle);
+        }else if (R.id.rb_myproject ==viewId){
+            showContentFragment(PROJECT_FLAG, bundle);
         }
     }
     private void isShowMineFragment(){

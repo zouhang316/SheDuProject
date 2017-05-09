@@ -1,4 +1,4 @@
-package com.beenvip.shedu.publics;
+package com.beenvip.shedu.publics.activity;
 
 import android.os.Bundle;
 
@@ -6,14 +6,14 @@ import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
 
 /**
- * Created by ZH on 2017/4/10.
+ * Created by ZH on 2017/5/9.
  * 497239511@qq.com
  */
 
-public class KefuActivity extends BaseActivity {
+public class SkillActivity extends BaseActivity {
     @Override
     protected void initData() {
-        setTitle("联系客服");
+
     }
 
     @Override
@@ -28,7 +28,7 @@ public class KefuActivity extends BaseActivity {
 
     @Override
     protected void onActivityCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_kefu);
-
+        setContentView(R.layout.activity_skill);
+        setTitle("技能认证");
     }
 }

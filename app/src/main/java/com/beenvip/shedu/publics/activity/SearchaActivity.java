@@ -1,4 +1,4 @@
-package com.beenvip.shedu.publics;
+package com.beenvip.shedu.publics.activity;
 
 import android.os.Bundle;
 import android.text.Editable;

@@ -85,6 +85,6 @@ public class SelectProject extends BaseActivity {
             }
 
 
-        },false);
+        },true);
     }
 }

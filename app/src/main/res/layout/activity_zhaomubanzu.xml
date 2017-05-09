@@ -30,6 +30,7 @@
                 android:text="班组类型"/>
 
             <TextView
+                android:id="@+id/banzuname"
                 style="@style/ProjectDetailsTextFont"
                 android:text="请选择班组类别"
                 android:drawableRight="@mipmap/ic_right2"
@@ -39,12 +40,14 @@
         <TextView
             style="@style/MarginLine"/>
         <RelativeLayout
+            android:id="@+id/selectstarttime"
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
                 android:text="开始时间"/>
 
             <TextView
+                android:id="@+id/startime"
                 style="@style/ProjectDetailsTextFont"
                 android:text="请选择开始时间"
                 android:drawableRight="@mipmap/ic_right2"
@@ -54,12 +57,14 @@
         <TextView
             style="@style/MarginLine"/>
         <RelativeLayout
+            android:id="@+id/selectlasttime"
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
                 android:text="截至时间"/>
 
             <TextView
+                android:id="@+id/lasttime"
                 style="@style/ProjectDetailsTextFont"
                 android:text="请选择截至时间"
                 android:drawableRight="@mipmap/ic_right2"
@@ -70,6 +75,7 @@
             style="@style/MarginLine"/>
 
         <RelativeLayout
+            android:id="@+id/selectcity"
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
@@ -117,12 +123,14 @@
         <TextView
             style="@style/MarginLine"/>
         <RelativeLayout
+            android:id="@+id/paytype"
             style="@style/WageRelativeLayoutStyle">
             <TextView
                 style="@style/WageFontStyle"
                 android:text="支付方式"/>
 
             <TextView
+                android:id="@+id/paytype_tv"
                 style="@style/ProjectDetailsTextFont"
                 android:text="请选择支付方式"
                 android:drawableRight="@mipmap/ic_right2"

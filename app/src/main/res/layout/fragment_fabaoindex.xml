@@ -179,14 +179,16 @@
                         android:text="招募工人" />
 
                     <RadioButton
+                        android:id="@+id/zhaogongyingshan"
+                        style="@style/IndexRadioButtonStyle"
+                        android:drawableTop="@drawable/ic_chan"
+                        android:text="找供应商" />
+
+                    <RadioButton
+                        android:id="@+id/falv"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@drawable/ic_falv"
                         android:text="法律援助" />
-
-                    <RadioButton
-                        style="@style/IndexRadioButtonStyle"
-                        android:drawableTop="@drawable/ic_zixun"
-                        android:text="行业资讯" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -196,26 +198,27 @@
                     android:layout_weight="1">
 
                     <RadioButton
-                        android:id="@+id/zhaogong"
+                        android:id="@+id/hangyezixun"
+                        style="@style/IndexRadioButtonStyle"
+                        android:drawableTop="@drawable/ic_zixun"
+                        android:text="行业资讯" />
+
+                    <RadioButton
+                        android:id="@+id/baoxian"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@drawable/ic_luomao"
                         android:text="保险服务" />
 
                     <RadioButton
+                        android:id="@+id/zigepeixun"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@drawable/ic_book"
                         android:text="职业资格培训" />
 
                     <RadioButton
-                        android:id="@+id/releasedemand"
+                        android:id="@+id/more"
                         style="@style/IndexRadioButtonStyle"
                         android:drawableTop="@drawable/ic_more"
-                        android:text="更多" />
-
-                    <RadioButton
-                        android:visibility="invisible"
-                        style="@style/IndexRadioButtonStyle"
-                        android:drawableTop="@mipmap/ic_launcher"
                         android:text="更多" />
                 </LinearLayout>
             </LinearLayout>
@@ -309,7 +312,7 @@
                 android:background="@color/wihte"
                 android:divider="@color/backgroundColor"
                 android:dividerHeight="1dp"
-                android:focusable="false" />
+                />
         </LinearLayout>
 
     </ScrollView>

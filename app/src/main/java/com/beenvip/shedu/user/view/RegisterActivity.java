@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
-import com.beenvip.shedu.publics.FirstSelectIdentityActivity;
+import com.beenvip.shedu.publics.activity.FirstSelectIdentityActivity;
 import com.beenvip.shedu.utils.CommUtils;
 import com.beenvip.shedu.utils.TimeButton;
 

@@ -1,11 +1,13 @@
-package com.beenvip.shedu.contractor.activity;
+package com.beenvip.shedu.publics.activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.utils.LalaLog;
@@ -19,6 +21,7 @@ import com.bumptech.glide.Glide;
 public class SMActivity extends BaseActivity implements View.OnClickListener{
     private ImageView idCard_zm;
     private ImageView idCard_fm;
+    private Bitmap bitmap;
     @Override
     protected void initData() {
 
@@ -41,7 +44,6 @@ public class SMActivity extends BaseActivity implements View.OnClickListener{
         setTitle("实名认证");
         idCard_zm=findView(R.id.idcard_zm);
         idCard_fm=findView(R.id.idcard_fm);
-        Glide.with(this).load(R.mipmap.sss).override(100,80).into(idCard_zm);
 
     }
 
@@ -70,8 +72,16 @@ public class SMActivity extends BaseActivity implements View.OnClickListener{
             ContentResolver cr = this.getContentResolver();
                 /* 将Bitmap设定到ImageView */
                 if (requestCode==1){
-                    //idCard_zm.setImageBitmap(bitmap);
-                    Glide.with(this).load(uri).into(idCard_zm);
+//                    使用Bitmap
+//                    try {
+//                        if (bitmap!=null) bitmap.recycle();
+//                        bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
+//
+//                    } catch (FileNotFoundException e) {
+//                        e.printStackTrace();
+//                    }
+//                    idCard_zm.setImageBitmap(bitmap);
+                    Glide.with(this).load(uri).into(idCard_zm); //使用uri
                 }else if (requestCode==2){
                     Glide.with(this).load(uri).into(idCard_fm);
                 }

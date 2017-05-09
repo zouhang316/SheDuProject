@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.beenvip.shedu.R;
 import com.beenvip.shedu.base.BaseActivity;
 import com.beenvip.shedu.base.bean.BaseErrorInfo;
-import com.beenvip.shedu.publics.FirstSelectIdentityActivity;
+import com.beenvip.shedu.publics.activity.FirstSelectIdentityActivity;
 import com.beenvip.shedu.user.model.bean.LoginBean;
 import com.beenvip.shedu.user.presenter.LoginPresenter;
 import com.beenvip.shedu.user.presenter.LoginPresenterImpl;

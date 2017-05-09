@@ -36,22 +36,22 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Splash_Style">
-
-
-        </activity>
-        <activity android:name=".publics.ChoiceIdentityActivity"/>
-        <activity android:name=".publics.FirstSelectIdentityActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
-        <activity android:name=".publics.SearchaActivity"/>
+        <activity android:name=".publics.activity.ChoiceIdentityActivity"/>
+        <activity android:name=".publics.activity.FirstSelectIdentityActivity">
+
+        </activity>
+        <activity android:name=".publics.activity.SearchaActivity"/>
         <activity android:name=".contractor.activity.WageHostedActivity"/>
         <activity android:name=".contractor.activity.ProjectDetailsActivity"/>
         <activity android:name=".contractor.activity.AddressSwicthActivity"/>
-        <activity android:name=".contractor.activity.SMActivity"/>
+        <activity android:name=".publics.activity.SMActivity"/>
         <activity
             android:name=".contractor.activity.PersonInforActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
@@ -65,8 +65,9 @@
             android:name=".fabaofang.activity.ReleaseDemandActivity"
             android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity android:name=".contractor.activity.JobDetailsActivity"/>
-        <activity android:name=".publics.KefuActivity"/>
+        <activity android:name=".publics.activity.KefuActivity"/>
         <activity android:name=".fabaofang.activity.MoreActivity"/>
+        <activity android:name=".publics.activity.SettingActivity"/>
         <activity android:name=".fabaofang.activity.BanzuInfoActivity"/>
         <activity android:name=".fabaofang.activity.SelectProject"/>
         <activity android:name=".fabaofang.activity.AddProjectActivity"

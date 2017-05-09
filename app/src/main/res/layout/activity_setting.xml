@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+    <RelativeLayout
+        android:background="@color/wihte"
+        android:id="@+id/about"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
+        <TextView
+            android:background="@color/wihte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/minefontcolor"
+            android:drawableLeft="@drawable/ic_yanzhen"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="关于社都"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_right2"
+
+            android:id="@+id/textView" />
+    </RelativeLayout>
+    <TextView
+        style="@style/Line"/>
+    <RelativeLayout
+        android:background="@color/wihte"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/minefontcolor"
+            android:drawableLeft="@drawable/ic_kefu"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="意见反馈"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_right2" />
+    </RelativeLayout>
+    <TextView
+        style="@style/Line"/>
+    <RelativeLayout
+        android:background="@color/wihte"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/minefontcolor"
+            android:drawableLeft="@drawable/ic_ziliao"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="版本更新"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前版本号: V1.0"
+            android:drawablePadding="20dp"
+            android:drawableRight="@mipmap/ic_right2" />
+    </RelativeLayout>
+    <TextView
+        style="@style/Line"/>
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_loginbutton"
+        android:text="退出登录"
+        android:textColor="@color/wihte"
+        android:textSize="17sp" />
+
+</LinearLayout>

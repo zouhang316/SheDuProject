@@ -57,7 +57,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
+        android:paddingTop="5dp"
         android:background="#F5F5F5"
         android:orientation="vertical">
 
@@ -122,21 +122,6 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/renwuguanli"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawablePadding="10dp"
-                android:drawableTop="@mipmap/ic_index_no"
-                android:gravity="center"
-                android:text="任务管理" />
-
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/backgroundColor" />
-
-            <TextView
                 android:id="@+id/xiangmushezhi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -160,6 +145,22 @@
                 android:drawableTop="@mipmap/ic_index_no"
                 android:gravity="center"
                 android:text="资料管理" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/backgroundColor" />
+
+            <TextView
+                android:id="@+id/renwuguanli"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="10dp"
+                android:drawableTop="@mipmap/ic_index_no"
+                android:gravity="center"
+                android:text="项目联盟" />
+
         </LinearLayout>
 
         <TextView
@@ -168,6 +169,7 @@
             android:background="@color/backgroundColor" />
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:background="@color/wihte"

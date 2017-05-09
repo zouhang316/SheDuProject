@@ -56,7 +56,7 @@
                 android:text="找班组" />
 
             <RadioButton
-                android:id="@+id/rb_findgys"
+                android:id="@+id/rb_myproject"
                 style="@style/tab_main_btn"
                 android:drawableTop="@drawable/tab_myproject_btn"
                 android:text="我的项目" />
